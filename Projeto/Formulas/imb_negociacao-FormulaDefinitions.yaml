@@ -1,0 +1,4 @@
+imb_valortotaldanegociacao: |-
+    =Switch(Value(imb_tipodenegociacao),
+     826060000, Value(imb_valorpormes) * Round(DateDiff(imb_contratode, imb_contratoate) / 30, 0),
+    826060001, imb_valornegociacao)

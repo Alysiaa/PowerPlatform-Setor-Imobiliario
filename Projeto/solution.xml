@@ -1,11 +1,11 @@
-<ImportExportXml version="9.2.25073.164" SolutionPackageVersion="9.2" languagecode="1046" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25073.164" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25073.00164">
+<ImportExportXml version="9.2.25073.164" SolutionPackageVersion="9.2" languagecode="1046" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25073.164" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25074.00180">
   <SolutionManifest>
     <UniqueName>Proj1SetorImobiliario</UniqueName>
     <LocalizedNames>
       <LocalizedName description="Proj1 - Setor Imobiliário" languagecode="1046" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.0.1</Version>
+    <Version>1.0.0.4</Version>
     <Managed>0</Managed>
     <Publisher>
       <UniqueName>SetorImobiliario</UniqueName>
@@ -83,7 +83,28 @@
       <RootComponent type="1" schemaName="imb_negociacao" behavior="0" />
       <RootComponent type="1" schemaName="imb_proprietariodoimovel" behavior="0" />
       <RootComponent type="9" schemaName="imb_estado" behavior="0" />
+      <RootComponent type="61" schemaName="imb_cliente" behavior="0" />
+      <RootComponent type="61" schemaName="imb_corretor" behavior="0" />
+      <RootComponent type="61" schemaName="imb_home" behavior="0" />
+      <RootComponent type="61" schemaName="imb_imoveis" behavior="0" />
+      <RootComponent type="61" schemaName="imb_negociacao" behavior="0" />
+      <RootComponent type="61" schemaName="imb_proprietario" behavior="0" />
+      <RootComponent type="62" schemaName="imb_Imobiliaria" behavior="0" />
+      <RootComponent type="80" schemaName="imb_Imobiliaria" behavior="0" />
     </RootComponents>
-    <MissingDependencies />
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)">
+          <package appName="AppModule Web Resources Package" version="2.5">AppModuleWebResources (2.5)</package>
+        </Required>
+        <Dependent type="80" schemaName="imb_Imobiliaria" displayName="Imobiliária" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.15)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.21">PowerAppsAppFramework_Anchor (1.0.0.21)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=imb_Imobiliaria,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="imb_Imobiliaria" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+    </MissingDependencies>
   </SolutionManifest>
 </ImportExportXml>

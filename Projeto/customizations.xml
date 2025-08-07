@@ -337,7 +337,7 @@
               <Type>nvarchar</Type>
               <Name>imb_cpf</Name>
               <LogicalName>imb_cpf</LogicalName>
-              <RequiredLevel>none</RequiredLevel>
+              <RequiredLevel>required</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
@@ -1366,20 +1366,27 @@
             <FormActivationState>1</FormActivationState>
             <form headerdensity="HighWithControls">
               <tabs>
-                <tab verticallayout="true" id="{e73e4e76-6ed4-4fb8-8272-c5605aee2e4f}" IsUserDefined="1">
+                <tab name="tab_2" id="e5c9b8ab-0e1a-4574-8ae1-0c8b2b1cfc40" IsUserDefined="0" locklevel="0" showlabel="true">
                   <labels>
                     <label description="Geral" languagecode="1046" />
                   </labels>
                   <columns>
-                    <column width="100%">
+                    <column width="50%">
                       <sections>
-                        <section showlabel="false" showbar="false" IsUserDefined="0" id="{0eda13df-244c-4b2d-bcfc-d9fff254e1da}">
+                        <section name="tab_2_section_1" id="917a7fca-b780-41c0-bc7e-8349a7b41335" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
                           <labels>
-                            <label description="Geral" languagecode="1046" />
+                            <label description="Identificação do Cliente" languagecode="1046" />
                           </labels>
                           <rows>
                             <row>
-                              <cell id="{6776908f-74f8-462a-8bbb-c6372c16b599}">
+                              <cell locklevel="0" id="{4d5380d8-714c-4b23-b30e-fc3c53d8e455}">
+                                <labels>
+                                  <label description="" languagecode="1046" />
+                                </labels>
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{6776908f-74f8-462a-8bbb-c6372c16b599}" colspan="1" rowspan="1">
                                 <labels>
                                   <label description="Nome" languagecode="1046" />
                                 </labels>
@@ -1387,47 +1394,76 @@
                               </cell>
                             </row>
                             <row>
-                              <cell id="{cdebaeb3-3131-46aa-a62a-3443708f1ce7}">
+                              <cell id="{0a308e2f-0a86-40d1-b678-028c61293611}" locklevel="0" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="CPF" languagecode="1046" />
+                                </labels>
+                                <control id="imb_cpf" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_cpf" disabled="false" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{cdebaeb3-3131-46aa-a62a-3443708f1ce7}" visible="false" colspan="1" rowspan="1">
                                 <labels>
                                   <label description="Proprietário" languagecode="1046" />
                                 </labels>
                                 <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                               </cell>
                             </row>
+                          </rows>
+                        </section>
+                        <section name="tab_2_section_2" id="f50e09c5-ecdb-43db-87cc-731ccab07907" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                          <labels>
+                            <label description="Contato" languagecode="1046" />
+                          </labels>
+                          <rows>
+                            <row />
                             <row>
-                              <cell id="{1a802595-750f-47a6-ae01-7837ec8a1e13}">
+                              <cell id="{47fd8b34-01fa-42d7-ab55-a0a3130e8a37}" locklevel="0" colspan="1" rowspan="1">
                                 <labels>
                                   <label description="Telefone" languagecode="1046" />
                                 </labels>
-                                <control id="imb_telefone" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_telefone" />
+                                <control id="imb_telefone" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_telefone" disabled="false" />
                               </cell>
                             </row>
                             <row>
-                              <cell id="{16873ef2-ef72-48bd-ac35-4eaaa42e3467}">
+                              <cell id="{0f91fcc4-9103-4351-a826-9903530c1332}" locklevel="0" colspan="1" rowspan="1">
                                 <labels>
                                   <label description="E-mail" languagecode="1046" />
                                 </labels>
-                                <control id="imb_email" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_email" />
+                                <control id="imb_email" classid="{ADA2203E-B4CD-49BE-9DDF-234642B43B52}" datafieldname="imb_email" disabled="false" />
                               </cell>
                             </row>
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                    <column width="50%">
+                      <sections>
+                        <section name="tab_2_section_4" id="a023561e-5f59-483b-ae9c-0e18edcb259e" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                          <labels>
+                            <label description="Endereço" languagecode="1046" />
+                          </labels>
+                          <rows>
                             <row>
-                              <cell id="{6ebf5fa4-af44-4f7a-a03d-b24968090eac}">
+                              <cell locklevel="0" id="{bd111a1f-2454-4335-b4c6-02d3246a1c14}">
                                 <labels>
-                                  <label description="Rua" languagecode="1046" />
+                                  <label description="" languagecode="1046" />
                                 </labels>
-                                <control id="imb_rua" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_rua" />
                               </cell>
-                            </row>
-                            <row>
-                              <cell id="{f47b6133-4ad9-4cfa-8158-1e5af37f795a}">
+                              <cell locklevel="0" id="{770e516e-456a-4fed-8549-5a350944f7e5}">
                                 <labels>
-                                  <label description="Cidade" languagecode="1046" />
+                                  <label description="" languagecode="1046" />
                                 </labels>
-                                <control id="imb_cidade" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_cidade" />
                               </cell>
                             </row>
                             <row>
-                              <cell id="{18afc7cb-4d4f-48c7-a720-e78b621ce735}" locklevel="0" colspan="1" rowspan="1">
+                              <cell id="{19e7f176-3c65-41b8-9718-2695c03359df}" locklevel="0" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="CEP" languagecode="1046" />
+                                </labels>
+                                <control id="imb_cep" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_cep" disabled="false" />
+                              </cell>
+                              <cell id="{17be518f-022c-4bef-b871-f1607cc500a8}" locklevel="0" colspan="1" rowspan="1">
                                 <labels>
                                   <label description="Estado" languagecode="1046" />
                                 </labels>
@@ -1435,19 +1471,35 @@
                               </cell>
                             </row>
                             <row>
-                              <cell id="{63c7740e-086e-400b-b848-f6d55e612878}">
+                              <cell id="{c66742cf-e048-408c-a64e-9f9f201cef59}" locklevel="0" colspan="2" rowspan="1">
                                 <labels>
-                                  <label description="CEP" languagecode="1046" />
+                                  <label description="Cidade" languagecode="1046" />
                                 </labels>
-                                <control id="imb_cep" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_cep" />
+                                <control id="imb_cidade" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_cidade" disabled="false" />
                               </cell>
                             </row>
                             <row>
-                              <cell id="{5f306281-8192-49d3-90e9-e9ccb495c54f}">
+                              <cell id="{51b7f48f-fc33-48e4-8c48-dbce9f6e5c0d}" locklevel="0" colspan="2" rowspan="1">
+                                <labels>
+                                  <label description="Rua" languagecode="1046" />
+                                </labels>
+                                <control id="imb_rua" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_rua" disabled="false" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{fd6c7689-a8c7-4c5a-87bc-d3eae399dd45}" locklevel="0" colspan="2" rowspan="1">
+                                <labels>
+                                  <label description="Bairro" languagecode="1046" />
+                                </labels>
+                                <control id="imb_bairro" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_bairro" disabled="false" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{cc6d2b66-f527-48b0-ab67-7c786cf6d4e7}" locklevel="0" colspan="2" rowspan="1">
                                 <labels>
                                   <label description="Complemento" languagecode="1046" />
                                 </labels>
-                                <control id="imb_complemento" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_complemento" />
+                                <control id="imb_complemento" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_complemento" disabled="false" />
                               </cell>
                             </row>
                           </rows>
@@ -1529,11 +1581,13 @@
                   <cell name="imb_nome" width="300" />
                   <cell name="imb_telefone" width="150" />
                   <cell name="imb_email" width="150" />
-                  <cell name="imb_rua" width="150" />
-                  <cell name="imb_cidade" width="150" />
-                  <cell name="imb_estado" width="100" />
                   <cell name="imb_cep" width="150" />
+                  <cell name="imb_cidade" width="150" />
+                  <cell name="imb_rua" width="150" />
+                  <cell name="imb_bairro" width="100" />
+                  <cell name="imb_estado" width="100" />
                   <cell name="imb_complemento" width="150" />
+                  <cell name="createdon" width="131" />
                 </row>
               </grid>
             </layoutxml>
@@ -1555,6 +1609,8 @@
                   <attribute name="imb_cep" />
                   <attribute name="imb_complemento" />
                   <attribute name="imb_estado" />
+                  <attribute name="imb_bairro" />
+                  <attribute name="createdon" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -1574,7 +1630,15 @@
               <grid name="resultset" jump="imb_nome" select="1" icon="1" preview="1">
                 <row name="result" id="imb_clienteid">
                   <cell name="imb_nome" width="300" />
-                  <cell name="createdon" width="125" />
+                  <cell name="imb_telefone" width="100" />
+                  <cell name="imb_email" width="100" />
+                  <cell name="imb_cep" width="100" />
+                  <cell name="imb_cidade" width="100" />
+                  <cell name="imb_rua" width="100" />
+                  <cell name="imb_bairro" width="100" />
+                  <cell name="imb_estado" width="100" />
+                  <cell name="imb_complemento" width="120" />
+                  <cell name="createdon" width="131" />
                 </row>
               </grid>
             </layoutxml>
@@ -1584,11 +1648,19 @@
                 <entity name="imb_cliente">
                   <attribute name="imb_clienteid" />
                   <attribute name="imb_nome" />
-                  <attribute name="createdon" />
                   <order attribute="imb_nome" descending="false" />
                   <filter type="and">
                     <condition attribute="statecode" operator="eq" value="1" />
                   </filter>
+                  <attribute name="imb_telefone" />
+                  <attribute name="imb_email" />
+                  <attribute name="imb_cep" />
+                  <attribute name="imb_cidade" />
+                  <attribute name="imb_rua" />
+                  <attribute name="imb_bairro" />
+                  <attribute name="imb_estado" />
+                  <attribute name="imb_complemento" />
+                  <attribute name="createdon" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -1608,7 +1680,15 @@
               <grid name="imb_clientes" jump="imb_nome" select="1" icon="1" preview="1">
                 <row name="imb_cliente" id="imb_clienteid">
                   <cell name="imb_nome" width="300" />
-                  <cell name="createdon" width="125" />
+                  <cell name="imb_telefone" width="100" />
+                  <cell name="imb_email" width="100" />
+                  <cell name="imb_cep" width="100" />
+                  <cell name="imb_cidade" width="100" />
+                  <cell name="imb_rua" width="100" />
+                  <cell name="imb_bairro" width="100" />
+                  <cell name="imb_estado" width="100" />
+                  <cell name="imb_complemento" width="120" />
+                  <cell name="createdon" width="131" />
                 </row>
               </grid>
             </layoutxml>
@@ -1618,11 +1698,19 @@
                 <entity name="imb_cliente">
                   <attribute name="imb_clienteid" />
                   <attribute name="imb_nome" />
-                  <attribute name="createdon" />
                   <order attribute="imb_nome" descending="false" />
                   <filter type="and">
                     <condition attribute="statecode" operator="eq" value="0" />
                   </filter>
+                  <attribute name="imb_telefone" />
+                  <attribute name="imb_email" />
+                  <attribute name="imb_cep" />
+                  <attribute name="imb_cidade" />
+                  <attribute name="imb_rua" />
+                  <attribute name="imb_bairro" />
+                  <attribute name="imb_estado" />
+                  <attribute name="imb_complemento" />
+                  <attribute name="createdon" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -1950,6 +2038,46 @@
                 <Description description="Taxa de câmbio da moeda associada à entidade, referente à moeda base." languagecode="1046" />
               </Descriptions>
             </attribute>
+            <attribute PhysicalName="imb_cnpj">
+              <Type>nvarchar</Type>
+              <Name>imb_cnpj</Name>
+              <LogicalName>imb_cnpj</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <Format>text</Format>
+              <MaxLength>100</MaxLength>
+              <Length>200</Length>
+              <displaynames>
+                <displayname description="CNPJ" languagecode="1046" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1046" />
+              </Descriptions>
+            </attribute>
             <attribute PhysicalName="imb_CorretorId">
               <Type>primarykey</Type>
               <Name>imb_corretorid</Name>
@@ -1986,6 +2114,86 @@
               </displaynames>
               <Descriptions>
                 <Description description="Identificador exclusivo de instâncias de entidade" languagecode="1046" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="imb_cpf">
+              <Type>nvarchar</Type>
+              <Name>imb_cpf</Name>
+              <LogicalName>imb_cpf</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <Format>text</Format>
+              <MaxLength>100</MaxLength>
+              <Length>200</Length>
+              <displaynames>
+                <displayname description="CPF" languagecode="1046" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1046" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="imb_email">
+              <Type>nvarchar</Type>
+              <Name>imb_email</Name>
+              <LogicalName>imb_email</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <Format>email</Format>
+              <MaxLength>200</MaxLength>
+              <Length>400</Length>
+              <displaynames>
+                <displayname description="E-mail" languagecode="1046" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1046" />
               </Descriptions>
             </attribute>
             <attribute PhysicalName="imb_Meta">
@@ -3091,11 +3299,11 @@
                     <label description="Geral" languagecode="1046" />
                   </labels>
                   <columns>
-                    <column width="100%">
+                    <column width="50%">
                       <sections>
-                        <section showlabel="false" showbar="false" IsUserDefined="0" id="{0f5a977a-2bf1-4072-aefb-88315f3c724c}">
+                        <section showlabel="true" showbar="false" IsUserDefined="0" id="{0f5a977a-2bf1-4072-aefb-88315f3c724c}">
                           <labels>
-                            <label description="Geral" languagecode="1046" />
+                            <label description="Informações do Corretor" languagecode="1046" />
                           </labels>
                           <rows>
                             <row>
@@ -3107,7 +3315,7 @@
                               </cell>
                             </row>
                             <row>
-                              <cell id="{8d7fe09a-17ac-428c-84b9-2c9631454ded}">
+                              <cell id="{8d7fe09a-17ac-428c-84b9-2c9631454ded}" visible="false">
                                 <labels>
                                   <label description="Proprietário" languagecode="1046" />
                                 </labels>
@@ -3115,15 +3323,59 @@
                               </cell>
                             </row>
                             <row>
-                              <cell id="{b82eea08-a5fa-4c65-8b7a-0ee533d8542b}">
+                              <cell id="{0d4f4768-a3dc-456c-9232-dcfd0792417d}" locklevel="0" colspan="1" rowspan="1">
                                 <labels>
-                                  <label description="Meta" languagecode="1046" />
+                                  <label description="CPF" languagecode="1046" />
                                 </labels>
-                                <control id="imb_meta" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="imb_meta" />
+                                <control id="imb_cpf" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_cpf" disabled="false" />
                               </cell>
                             </row>
                             <row>
-                              <cell id="{bed481e3-fed9-4cd7-a5d3-086720b48bc3}">
+                              <cell id="{b4bbd70a-4a1b-4902-9204-2a2a3cd8a732}" locklevel="0" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="CNPJ" languagecode="1046" />
+                                </labels>
+                                <control id="imb_cnpj" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_cnpj" disabled="false" />
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                        <section name="null_section_4" id="4d9b9aea-4416-4bdb-9fd1-ba5ff9b2dca5" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                          <labels>
+                            <label description="Contato" languagecode="1046" />
+                          </labels>
+                          <rows>
+                            <row />
+                            <row>
+                              <cell id="{3aa09e59-2278-49b9-8989-73cbfab1e885}" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Telefone" languagecode="1046" />
+                                </labels>
+                                <control id="imb_telefone" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_telefone" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{a7172374-81d5-4972-ad91-340fa6d013c1}" locklevel="0" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="E-mail" languagecode="1046" />
+                                </labels>
+                                <control id="imb_email" classid="{ADA2203E-B4CD-49BE-9DDF-234642B43B52}" datafieldname="imb_email" disabled="false" />
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                    <column width="50%">
+                      <sections>
+                        <section name="_section_940" id="4eb40184-fcdb-4a38-bd39-682a55499578" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                          <labels>
+                            <label description="Meta" languagecode="1046" />
+                          </labels>
+                          <rows>
+                            <row />
+                            <row>
+                              <cell id="{bed481e3-fed9-4cd7-a5d3-086720b48bc3}" colspan="1" rowspan="1">
                                 <labels>
                                   <label description="Meta Batida" languagecode="1046" />
                                 </labels>
@@ -3131,11 +3383,11 @@
                               </cell>
                             </row>
                             <row>
-                              <cell id="{3aa09e59-2278-49b9-8989-73cbfab1e885}">
+                              <cell id="{b82eea08-a5fa-4c65-8b7a-0ee533d8542b}" colspan="1" rowspan="1">
                                 <labels>
-                                  <label description="Telefone" languagecode="1046" />
+                                  <label description="Meta" languagecode="1046" />
                                 </labels>
-                                <control id="imb_telefone" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_telefone" />
+                                <control id="imb_meta" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="imb_meta" />
                               </cell>
                             </row>
                             <row>
@@ -3223,9 +3475,11 @@
               <grid name="resultset" jump="imb_nome" select="1" icon="1" preview="1">
                 <row name="result" id="imb_corretorid">
                   <cell name="imb_nome" width="300" />
-                  <cell name="imb_meta" width="150" />
-                  <cell name="imb_metabatida" width="150" />
+                  <cell name="imb_cnpj" width="100" />
                   <cell name="imb_telefone" width="150" />
+                  <cell name="imb_metabatida" width="150" />
+                  <cell name="imb_meta" width="150" />
+                  <cell name="imb_valorobtido" width="113" />
                 </row>
               </grid>
             </layoutxml>
@@ -3243,6 +3497,8 @@
                   <attribute name="imb_meta" />
                   <attribute name="imb_metabatida" />
                   <attribute name="imb_telefone" />
+                  <attribute name="imb_cnpj" />
+                  <attribute name="imb_valorobtido" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -3262,7 +3518,11 @@
               <grid name="resultset" jump="imb_nome" select="1" icon="1" preview="1">
                 <row name="result" id="imb_corretorid">
                   <cell name="imb_nome" width="300" />
-                  <cell name="createdon" width="125" />
+                  <cell name="imb_cnpj" width="100" />
+                  <cell name="imb_telefone" width="100" />
+                  <cell name="imb_metabatida" width="109" />
+                  <cell name="imb_meta" width="100" />
+                  <cell name="imb_valorobtido" width="113" />
                 </row>
               </grid>
             </layoutxml>
@@ -3272,11 +3532,15 @@
                 <entity name="imb_corretor">
                   <attribute name="imb_corretorid" />
                   <attribute name="imb_nome" />
-                  <attribute name="createdon" />
                   <order attribute="imb_nome" descending="false" />
                   <filter type="and">
                     <condition attribute="statecode" operator="eq" value="1" />
                   </filter>
+                  <attribute name="imb_cnpj" />
+                  <attribute name="imb_telefone" />
+                  <attribute name="imb_metabatida" />
+                  <attribute name="imb_meta" />
+                  <attribute name="imb_valorobtido" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -3296,7 +3560,11 @@
               <grid name="imb_corretors" jump="imb_nome" select="1" icon="1" preview="1">
                 <row name="imb_corretor" id="imb_corretorid">
                   <cell name="imb_nome" width="300" />
-                  <cell name="createdon" width="125" />
+                  <cell name="imb_cnpj" width="100" />
+                  <cell name="imb_telefone" width="100" />
+                  <cell name="imb_metabatida" width="109" />
+                  <cell name="imb_meta" width="100" />
+                  <cell name="imb_valorobtido" width="113" />
                 </row>
               </grid>
             </layoutxml>
@@ -3306,11 +3574,15 @@
                 <entity name="imb_corretor">
                   <attribute name="imb_corretorid" />
                   <attribute name="imb_nome" />
-                  <attribute name="createdon" />
                   <order attribute="imb_nome" descending="false" />
                   <filter type="and">
                     <condition attribute="statecode" operator="eq" value="0" />
                   </filter>
+                  <attribute name="imb_cnpj" />
+                  <attribute name="imb_telefone" />
+                  <attribute name="imb_metabatida" />
+                  <attribute name="imb_meta" />
+                  <attribute name="imb_valorobtido" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -3718,6 +3990,46 @@
                 <Description description="" languagecode="1046" />
               </Descriptions>
             </attribute>
+            <attribute PhysicalName="imb_complemento">
+              <Type>nvarchar</Type>
+              <Name>imb_complemento</Name>
+              <LogicalName>imb_complemento</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <Format>text</Format>
+              <MaxLength>500</MaxLength>
+              <Length>1000</Length>
+              <displaynames>
+                <displayname description="Complemento" languagecode="1046" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1046" />
+              </Descriptions>
+            </attribute>
             <attribute PhysicalName="imb_Conservacao">
               <Type>picklist</Type>
               <Name>imb_conservacao</Name>
@@ -3865,7 +4177,7 @@
               <Type>nvarchar</Type>
               <Name>imb_nome</Name>
               <LogicalName>imb_nome</LogicalName>
-              <RequiredLevel>required</RequiredLevel>
+              <RequiredLevel>none</RequiredLevel>
               <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
@@ -3896,7 +4208,7 @@
               <Length>1700</Length>
               <displaynames>
                 <displayname description="Nome" languagecode="1033" />
-                <displayname description="Nome" languagecode="1046" />
+                <displayname description="Identificação" languagecode="1046" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -4700,7 +5012,7 @@
                             <row>
                               <cell id="{e02bfd9f-c573-4a73-8c63-2dfedf73c07a}" showlabel="true" locklevel="0">
                                 <labels>
-                                  <label description="Nome" languagecode="1046" />
+                                  <label description="Identificação" languagecode="1046" />
                                 </labels>
                                 <control id="imb_nome" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="imb_nome" disabled="false" />
                               </cell>
@@ -4777,7 +5089,7 @@
                             <row>
                               <cell id="{ac649b77-85b1-4aa5-a42e-d297719015c1}">
                                 <labels>
-                                  <label description="Nome" languagecode="1046" />
+                                  <label description="Identificação" languagecode="1046" />
                                 </labels>
                                 <control id="imb_nome" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="imb_nome" />
                               </cell>
@@ -4811,7 +5123,7 @@
             <IntroducedVersion>1.0</IntroducedVersion>
             <FormPresentation>1</FormPresentation>
             <FormActivationState>1</FormActivationState>
-            <form>
+            <form headerdensity="HighWithControls">
               <tabs>
                 <tab verticallayout="true" id="{9a9412af-50e2-4d6a-ac8f-e834e2b65ce0}" IsUserDefined="1">
                   <labels>
@@ -4820,21 +5132,13 @@
                   <columns>
                     <column width="100%">
                       <sections>
-                        <section showlabel="false" showbar="false" IsUserDefined="0" id="{90184f23-d0af-4ee4-bc3e-ad8abd37af68}">
+                        <section showlabel="true" showbar="false" IsUserDefined="0" id="{90184f23-d0af-4ee4-bc3e-ad8abd37af68}">
                           <labels>
-                            <label description="Geral" languagecode="1046" />
+                            <label description="Informações do Imóvel" languagecode="1046" />
                           </labels>
                           <rows>
                             <row>
-                              <cell id="{8f7e843d-0b2c-4fc3-bfab-526b66d4d11e}">
-                                <labels>
-                                  <label description="Nome" languagecode="1046" />
-                                </labels>
-                                <control id="imb_nome" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="imb_nome" />
-                              </cell>
-                            </row>
-                            <row>
-                              <cell id="{a9b4fdfe-2f44-46d0-86bf-b5b6d784b6ca}">
+                              <cell id="{a9b4fdfe-2f44-46d0-86bf-b5b6d784b6ca}" visible="false">
                                 <labels>
                                   <label description="Proprietário" languagecode="1046" />
                                 </labels>
@@ -4842,43 +5146,23 @@
                               </cell>
                             </row>
                             <row>
-                              <cell id="{89ac9cac-01d9-4cb9-ac3d-693ae19ade4a}">
+                              <cell id="{2c738d3b-8943-4922-88a6-a271c79773da}" locklevel="0" colspan="1" rowspan="1">
                                 <labels>
-                                  <label description="Cidade" languagecode="1046" />
+                                  <label description="Identificação" languagecode="1046" />
                                 </labels>
-                                <control id="imb_cidade" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_cidade" />
+                                <control id="imb_nome" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_nome" disabled="false" />
                               </cell>
                             </row>
                             <row>
-                              <cell id="{c68b0384-01c4-4d8b-86c6-177e24cae266}">
+                              <cell id="{c2c4960c-4df1-499f-b186-e52ee7d6a6bd}" locklevel="0" colspan="1" rowspan="1">
                                 <labels>
-                                  <label description="CEP" languagecode="1046" />
+                                  <label description="Proprietário do Imóvel" languagecode="1046" />
                                 </labels>
-                                <control id="imb_cep" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_cep" />
-                              </cell>
-                            </row>
-                            <row>
-                              <cell id="{66ee4986-4bbe-46f4-a478-c5d05566848a}">
-                                <labels>
-                                  <label description="Bairro" languagecode="1046" />
-                                </labels>
-                                <control id="imb_bairro" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_bairro" />
-                              </cell>
-                            </row>
-                            <row>
-                              <cell id="{c014dd9d-6886-4fa2-9c0a-63860f11c816}">
-                                <labels>
-                                  <label description="Rua" languagecode="1046" />
-                                </labels>
-                                <control id="imb_rua" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_rua" />
-                              </cell>
-                            </row>
-                            <row>
-                              <cell id="{ae2f1adb-cf51-4e58-9738-2dbf7c5980f8}">
-                                <labels>
-                                  <label description="Número" languagecode="1046" />
-                                </labels>
-                                <control id="imb_numero" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="imb_numero" />
+                                <control id="imb_proprietariodoimovel" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="imb_proprietariodoimovel" disabled="false">
+                                  <parameters>
+                                    <DisableMru>true</DisableMru>
+                                  </parameters>
+                                </control>
                               </cell>
                             </row>
                             <row>
@@ -4891,11 +5175,125 @@
                             </row>
                           </rows>
                         </section>
+                        <section name="null_section_3" id="7729011f-9818-4b23-8698-2e143a23f418" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                          <labels>
+                            <label description="Endereço" languagecode="1046" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell locklevel="0" id="{f53fbc94-2e16-47ff-863c-4d4d639a8e8d}">
+                                <labels>
+                                  <label description="" languagecode="1046" />
+                                </labels>
+                              </cell>
+                              <cell locklevel="0" id="{6e27f2f0-87b3-4f6a-a1d5-8fd9df0b97c3}">
+                                <labels>
+                                  <label description="" languagecode="1046" />
+                                </labels>
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{c68b0384-01c4-4d8b-86c6-177e24cae266}" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="CEP" languagecode="1046" />
+                                </labels>
+                                <control id="imb_cep" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_cep" />
+                              </cell>
+                              <cell id="{6e3ef585-e664-42e4-83ab-b8824770eff7}" locklevel="0" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Estado" languagecode="1046" />
+                                </labels>
+                                <control id="imb_estado" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="imb_estado" disabled="false" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{89ac9cac-01d9-4cb9-ac3d-693ae19ade4a}" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Cidade" languagecode="1046" />
+                                </labels>
+                                <control id="imb_cidade" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_cidade" />
+                              </cell>
+                              <cell id="{66ee4986-4bbe-46f4-a478-c5d05566848a}" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Bairro" languagecode="1046" />
+                                </labels>
+                                <control id="imb_bairro" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_bairro" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{c014dd9d-6886-4fa2-9c0a-63860f11c816}" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Rua" languagecode="1046" />
+                                </labels>
+                                <control id="imb_rua" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_rua" />
+                              </cell>
+                              <cell id="{ae2f1adb-cf51-4e58-9738-2dbf7c5980f8}" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Número" languagecode="1046" />
+                                </labels>
+                                <control id="imb_numero" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="imb_numero" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{2aa01175-ac6b-4112-b25f-82c457203b51}" locklevel="0" colspan="2" rowspan="1">
+                                <labels>
+                                  <label description="Complemento" languagecode="1046" />
+                                </labels>
+                                <control id="imb_complemento" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_complemento" disabled="false" />
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
                       </sections>
                     </column>
                   </columns>
                 </tab>
               </tabs>
+              <header id="{4d36d44e-37d5-4198-90ae-69f416dccc75}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+                <rows>
+                  <row>
+                    <cell id="{5c0500a0-67df-48ba-ab86-fb17c54ebd51}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                    <cell id="{6190d180-980e-4391-9a89-fa993b0d5a9a}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                    <cell id="{d1a6ca8f-06b1-4540-89f9-294a6c8b6494}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                  </row>
+                </rows>
+              </header>
+              <footer id="{f611dadd-33f5-443f-a671-05aa64b4f885}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+                <rows>
+                  <row>
+                    <cell id="{1d7d52b5-a293-4b86-909d-b2ba70f1e070}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                    <cell id="{5a2cac63-c855-4d0c-944b-c72bceac6e9e}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                    <cell id="{cbd9bdb3-f9c8-4d3f-8b9a-399127585ef9}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                  </row>
+                </rows>
+              </footer>
+              <DisplayConditions Order="0" FallbackForm="true">
+                <Everyone />
+              </DisplayConditions>
             </form>
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
@@ -4921,7 +5319,12 @@
               <grid name="imb_imovels" jump="imb_nome" select="1" icon="1" preview="1">
                 <row name="imb_imovel" id="imb_imovelid">
                   <cell name="imb_nome" width="300" />
-                  <cell name="createdon" width="125" />
+                  <cell name="imb_proprietariodoimovel" width="168" />
+                  <cell name="imb_conservacao" width="113" />
+                  <cell name="imb_cep" width="100" />
+                  <cell name="imb_cidade" width="100" />
+                  <cell name="imb_rua" width="100" />
+                  <cell name="imb_estado" width="100" />
                 </row>
               </grid>
             </layoutxml>
@@ -4931,11 +5334,16 @@
                 <entity name="imb_imovel">
                   <attribute name="imb_imovelid" />
                   <attribute name="imb_nome" />
-                  <attribute name="createdon" />
                   <order attribute="imb_nome" descending="false" />
                   <filter type="and">
                     <condition attribute="statecode" operator="eq" value="0" />
                   </filter>
+                  <attribute name="imb_proprietariodoimovel" />
+                  <attribute name="imb_conservacao" />
+                  <attribute name="imb_cep" />
+                  <attribute name="imb_cidade" />
+                  <attribute name="imb_rua" />
+                  <attribute name="imb_estado" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -5019,12 +5427,12 @@
               <grid name="resultset" jump="imb_nome" select="1" icon="1" preview="1">
                 <row name="result" id="imb_imovelid">
                   <cell name="imb_nome" width="300" />
-                  <cell name="imb_cidade" width="150" />
-                  <cell name="imb_cep" width="150" />
-                  <cell name="imb_bairro" width="150" />
-                  <cell name="imb_rua" width="150" />
-                  <cell name="imb_numero" width="150" />
+                  <cell name="imb_proprietariodoimovel" width="168" />
                   <cell name="imb_conservacao" width="150" />
+                  <cell name="imb_cep" width="150" />
+                  <cell name="imb_cidade" width="150" />
+                  <cell name="imb_rua" width="150" />
+                  <cell name="imb_estado" width="100" />
                 </row>
               </grid>
             </layoutxml>
@@ -5041,10 +5449,10 @@
                   </filter>
                   <attribute name="imb_cidade" />
                   <attribute name="imb_cep" />
-                  <attribute name="imb_bairro" />
                   <attribute name="imb_rua" />
-                  <attribute name="imb_numero" />
                   <attribute name="imb_conservacao" />
+                  <attribute name="imb_proprietariodoimovel" />
+                  <attribute name="imb_estado" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -5064,7 +5472,12 @@
               <grid name="resultset" jump="imb_nome" select="1" icon="1" preview="1">
                 <row name="result" id="imb_imovelid">
                   <cell name="imb_nome" width="300" />
-                  <cell name="createdon" width="125" />
+                  <cell name="imb_proprietariodoimovel" width="168" />
+                  <cell name="imb_conservacao" width="113" />
+                  <cell name="imb_cep" width="100" />
+                  <cell name="imb_cidade" width="100" />
+                  <cell name="imb_rua" width="100" />
+                  <cell name="imb_estado" width="100" />
                 </row>
               </grid>
             </layoutxml>
@@ -5074,11 +5487,16 @@
                 <entity name="imb_imovel">
                   <attribute name="imb_imovelid" />
                   <attribute name="imb_nome" />
-                  <attribute name="createdon" />
                   <order attribute="imb_nome" descending="false" />
                   <filter type="and">
                     <condition attribute="statecode" operator="eq" value="1" />
                   </filter>
+                  <attribute name="imb_proprietariodoimovel" />
+                  <attribute name="imb_conservacao" />
+                  <attribute name="imb_cep" />
+                  <attribute name="imb_cidade" />
+                  <attribute name="imb_rua" />
+                  <attribute name="imb_estado" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -5540,8 +5958,8 @@
               <Type>nvarchar</Type>
               <Name>imb_nome</Name>
               <LogicalName>imb_nome</LogicalName>
-              <RequiredLevel>required</RequiredLevel>
-              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>PrimaryName|ReadOnlyInUI|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -5561,7 +5979,7 @@
               <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
               <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
               <IsDataSourceSecret>0</IsDataSourceSecret>
-              <AutoNumberFormat></AutoNumberFormat>
+              <AutoNumberFormat>Negociação-{SEQNUM:5}</AutoNumberFormat>
               <IsSearchable>1</IsSearchable>
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
@@ -5571,7 +5989,7 @@
               <Length>1700</Length>
               <displaynames>
                 <displayname description="Nome" languagecode="1033" />
-                <displayname description="Nome" languagecode="1046" />
+                <displayname description="ID Negociação" languagecode="1046" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1033" />
@@ -5646,7 +6064,7 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>0</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
-              <AppDefaultValue>826060000</AppDefaultValue>
+              <AppDefaultValue>-1</AppDefaultValue>
               <optionset Name="imb_negociacao_imb_tipodenegociacao">
                 <OptionSetType>picklist</OptionSetType>
                 <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -5677,26 +6095,26 @@
                 <Description description="" languagecode="1046" />
               </Descriptions>
             </attribute>
-            <attribute PhysicalName="imb_Valor">
+            <attribute PhysicalName="imb_valorNegociacao">
               <Type>decimal</Type>
-              <Name>imb_valor</Name>
-              <LogicalName>imb_valor</LogicalName>
+              <Name>imb_valornegociacao</Name>
+              <LogicalName>imb_valornegociacao</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
               <ImeMode>auto</ImeMode>
-              <ValidForUpdateApi>0</ValidForUpdateApi>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
-              <ValidForCreateApi>0</ValidForCreateApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
               <IsCustomField>1</IsCustomField>
-              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsAuditEnabled>1</IsAuditEnabled>
               <IsSecured>0</IsSecured>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
               <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
               <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
-              <SourceType>3</SourceType>
+              <SourceType>0</SourceType>
               <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
               <IsSortableEnabled>0</IsSortableEnabled>
               <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
@@ -5709,14 +6127,12 @@
               <IsLocalizable>0</IsLocalizable>
               <MinValue>-100000000000</MinValue>
               <MaxValue>100000000000</MaxValue>
-              <Accuracy>2</Accuracy>
               <displaynames>
-                <displayname description="Valor" languagecode="1046" />
+                <displayname description="Valor Negociação" languagecode="1046" />
               </displaynames>
               <Descriptions>
                 <Description description="" languagecode="1046" />
               </Descriptions>
-              <FormulaDefinitionFileName>/Formulas/imb_negociacao-FormulaDefinitions.yaml</FormulaDefinitionFileName>
             </attribute>
             <attribute PhysicalName="imb_ValorporMes">
               <Type>money</Type>
@@ -5800,6 +6216,47 @@
               <Descriptions>
                 <Description description="Valor do Valor por Mês em moeda base." languagecode="1046" />
               </Descriptions>
+            </attribute>
+            <attribute PhysicalName="imb_ValorTotaldaNegociacao">
+              <Type>decimal</Type>
+              <Name>imb_valortotaldanegociacao</Name>
+              <LogicalName>imb_valortotaldanegociacao</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>0</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>0</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.3</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>3</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <MinValue>-100000000000</MinValue>
+              <MaxValue>100000000000</MaxValue>
+              <Accuracy>2</Accuracy>
+              <displaynames>
+                <displayname description="Valor Total da Negociação" languagecode="1046" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1046" />
+              </Descriptions>
+              <FormulaDefinitionFileName>/Formulas/imb_negociacao-FormulaDefinitions.yaml</FormulaDefinitionFileName>
             </attribute>
             <attribute PhysicalName="ImportSequenceNumber">
               <Type>int</Type>
@@ -6519,7 +6976,7 @@
                             <row>
                               <cell id="{ebd83ae7-9682-4235-a4a6-835afe4240cf}" showlabel="true" locklevel="0">
                                 <labels>
-                                  <label description="Nome" languagecode="1046" />
+                                  <label description="ID Negociação" languagecode="1046" />
                                 </labels>
                                 <control id="imb_nome" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="imb_nome" disabled="false" />
                               </cell>
@@ -6596,7 +7053,7 @@
                             <row>
                               <cell id="{d0d8a98d-c3a8-4b0b-a71c-12f8bb7e21b8}">
                                 <labels>
-                                  <label description="Nome" languagecode="1046" />
+                                  <label description="ID Negociação" languagecode="1046" />
                                 </labels>
                                 <control id="imb_nome" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="imb_nome" />
                               </cell>
@@ -6630,7 +7087,7 @@
             <IntroducedVersion>1.0</IntroducedVersion>
             <FormPresentation>1</FormPresentation>
             <FormActivationState>1</FormActivationState>
-            <form>
+            <form headerdensity="HighWithControls">
               <tabs>
                 <tab verticallayout="true" id="{34d6d44e-4b7e-457f-b1f2-42a6eb945718}" IsUserDefined="1">
                   <labels>
@@ -6639,25 +7096,33 @@
                   <columns>
                     <column width="100%">
                       <sections>
-                        <section showlabel="false" showbar="false" IsUserDefined="0" id="{94f100a3-9d53-4f86-a30e-32c57afe17e8}">
+                        <section showlabel="true" showbar="false" IsUserDefined="0" id="{94f100a3-9d53-4f86-a30e-32c57afe17e8}">
                           <labels>
-                            <label description="Geral" languagecode="1046" />
+                            <label description="Informações Gerais" languagecode="1046" />
                           </labels>
                           <rows>
                             <row>
                               <cell id="{ffcd302e-06c0-4171-ac44-54f540b52071}">
                                 <labels>
-                                  <label description="Nome" languagecode="1046" />
+                                  <label description="ID Negociação" languagecode="1046" />
                                 </labels>
-                                <control id="imb_nome" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="imb_nome" />
+                                <control id="imb_nome" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="imb_nome" disabled="true" />
                               </cell>
                             </row>
                             <row>
-                              <cell id="{9d43e6f3-5260-4484-9b0f-ab9c250da48b}">
+                              <cell id="{9d43e6f3-5260-4484-9b0f-ab9c250da48b}" visible="false">
                                 <labels>
                                   <label description="Proprietário" languagecode="1046" />
                                 </labels>
                                 <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{67b4c446-85e8-4b59-a208-725757e4d25a}" locklevel="0" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Corretor" languagecode="1046" />
+                                </labels>
+                                <control id="imb_corretor" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="imb_corretor" disabled="false" />
                               </cell>
                             </row>
                             <row>
@@ -6692,6 +7157,54 @@
                                 <control id="imb_valorpormes" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="imb_valorpormes" />
                               </cell>
                             </row>
+                            <row>
+                              <cell id="{571fa8a4-a261-4398-88f6-24df66925068}" locklevel="0" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Valor Negociação" languagecode="1046" />
+                                </labels>
+                                <control id="imb_valornegociacao" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="imb_valornegociacao" disabled="false" />
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                        <section name="null_section_3" id="172b82e7-671f-4002-8bc7-9397f05015b1" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                          <labels>
+                            <label description="Total Negociação" languagecode="1046" />
+                          </labels>
+                          <rows>
+                            <row />
+                            <row>
+                              <cell id="{ffbc9ef4-b777-4498-857c-36ba7a7799d9}" locklevel="0" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Valor Total da Negociação" languagecode="1046" />
+                                </labels>
+                                <control id="imb_valortotaldanegociacao" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="imb_valortotaldanegociacao" disabled="false" />
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                        <section name="null_section_4" id="04f6d71d-f5cc-4a72-82e7-d98179fe7d97" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                          <labels>
+                            <label description="Informações do Imóvel" languagecode="1046" />
+                          </labels>
+                          <rows>
+                            <row />
+                            <row>
+                              <cell id="{65765c50-bccc-4af2-be36-aa0a80107291}" locklevel="0" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Imóvel" languagecode="1046" />
+                                </labels>
+                                <control id="imb_imovel" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="imb_imovel" disabled="false" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{c3d54a6f-026c-4197-96a8-3d1b304ee711}" locklevel="0" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Proprietário do Imóvel" languagecode="1046" />
+                                </labels>
+                                <control id="imb_proprietariodoimovel" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="imb_proprietariodoimovel" disabled="false" />
+                              </cell>
+                            </row>
                           </rows>
                         </section>
                       </sections>
@@ -6699,6 +7212,51 @@
                   </columns>
                 </tab>
               </tabs>
+              <header id="{e1e1fb7d-0696-4793-9e7f-c18b3daf14df}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+                <rows>
+                  <row>
+                    <cell id="{de6b999d-180e-48ac-a934-396555503a0e}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                    <cell id="{306bcdb7-4652-46a4-be9e-81a09c5a24a6}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                    <cell id="{c11d4702-8808-4ebf-a692-86093dd7a565}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                  </row>
+                </rows>
+              </header>
+              <footer id="{d6076d91-3f72-43a5-a993-445a62c16f96}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+                <rows>
+                  <row>
+                    <cell id="{db39cb29-6590-460e-9233-489f84ade084}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                    <cell id="{c5fd0dd6-3c0a-4989-8288-379387c2c235}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                    <cell id="{7420fe76-fe20-48b5-a9bf-4b6dfacef98d}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                  </row>
+                </rows>
+              </footer>
+              <DisplayConditions Order="0" FallbackForm="true">
+                <Everyone />
+              </DisplayConditions>
             </form>
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
@@ -6724,7 +7282,11 @@
               <grid name="imb_negociacaos" jump="imb_nome" select="1" icon="1" preview="1">
                 <row name="imb_negociacao" id="imb_negociacaoid">
                   <cell name="imb_nome" width="300" />
-                  <cell name="createdon" width="125" />
+                  <cell name="imb_corretor" width="100" />
+                  <cell name="imb_tipodenegociacao" width="153" />
+                  <cell name="imb_valortotaldanegociacao" width="189" />
+                  <cell name="imb_imovel" width="100" />
+                  <cell name="imb_proprietariodoimovel" width="168" />
                 </row>
               </grid>
             </layoutxml>
@@ -6734,11 +7296,15 @@
                 <entity name="imb_negociacao">
                   <attribute name="imb_negociacaoid" />
                   <attribute name="imb_nome" />
-                  <attribute name="createdon" />
                   <order attribute="imb_nome" descending="false" />
                   <filter type="and">
                     <condition attribute="statecode" operator="eq" value="0" />
                   </filter>
+                  <attribute name="imb_corretor" />
+                  <attribute name="imb_tipodenegociacao" />
+                  <attribute name="imb_valortotaldanegociacao" />
+                  <attribute name="imb_imovel" />
+                  <attribute name="imb_proprietariodoimovel" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -6885,11 +7451,12 @@
             <layoutxml>
               <grid name="resultset" jump="imb_nome" select="1" icon="1" preview="1">
                 <row name="result" id="imb_negociacaoid">
-                  <cell name="imb_nome" width="300" />
+                  <cell name="imb_nome" width="180" />
+                  <cell name="imb_corretor" width="100" />
                   <cell name="imb_tipodenegociacao" width="150" />
-                  <cell name="imb_contratode" width="150" />
-                  <cell name="imb_contratoate" width="150" />
-                  <cell name="imb_valorpormes" width="150" />
+                  <cell name="imb_valortotaldanegociacao" width="189" />
+                  <cell name="imb_imovel" width="100" />
+                  <cell name="imb_proprietariodoimovel" width="168" />
                 </row>
               </grid>
             </layoutxml>
@@ -6905,9 +7472,10 @@
                     <condition attribute="statecode" operator="eq" value="0" />
                   </filter>
                   <attribute name="imb_tipodenegociacao" />
-                  <attribute name="imb_contratode" />
-                  <attribute name="imb_contratoate" />
-                  <attribute name="imb_valorpormes" />
+                  <attribute name="imb_corretor" />
+                  <attribute name="imb_valortotaldanegociacao" />
+                  <attribute name="imb_imovel" />
+                  <attribute name="imb_proprietariodoimovel" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -6927,7 +7495,11 @@
               <grid name="resultset" jump="imb_nome" select="1" icon="1" preview="1">
                 <row name="result" id="imb_negociacaoid">
                   <cell name="imb_nome" width="300" />
-                  <cell name="createdon" width="125" />
+                  <cell name="imb_corretor" width="100" />
+                  <cell name="imb_tipodenegociacao" width="153" />
+                  <cell name="imb_valortotaldanegociacao" width="189" />
+                  <cell name="imb_imovel" width="100" />
+                  <cell name="imb_proprietariodoimovel" width="168" />
                 </row>
               </grid>
             </layoutxml>
@@ -6937,11 +7509,15 @@
                 <entity name="imb_negociacao">
                   <attribute name="imb_negociacaoid" />
                   <attribute name="imb_nome" />
-                  <attribute name="createdon" />
                   <order attribute="imb_nome" descending="false" />
                   <filter type="and">
                     <condition attribute="statecode" operator="eq" value="1" />
                   </filter>
+                  <attribute name="imb_corretor" />
+                  <attribute name="imb_tipodenegociacao" />
+                  <attribute name="imb_valortotaldanegociacao" />
+                  <attribute name="imb_imovel" />
+                  <attribute name="imb_proprietariodoimovel" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -8450,18 +9026,18 @@
             <IntroducedVersion>1.0</IntroducedVersion>
             <FormPresentation>1</FormPresentation>
             <FormActivationState>1</FormActivationState>
-            <form>
+            <form headerdensity="HighWithControls">
               <tabs>
                 <tab verticallayout="true" id="{62163dfa-874b-45b5-9231-34a55a37dd27}" IsUserDefined="1">
                   <labels>
                     <label description="Geral" languagecode="1046" />
                   </labels>
                   <columns>
-                    <column width="100%">
+                    <column width="50%">
                       <sections>
-                        <section showlabel="false" showbar="false" IsUserDefined="0" id="{4e01fcdc-a6f5-46c8-95b1-226dc4f2edf2}">
+                        <section showlabel="true" showbar="false" IsUserDefined="0" id="{4e01fcdc-a6f5-46c8-95b1-226dc4f2edf2}">
                           <labels>
-                            <label description="Geral" languagecode="1046" />
+                            <label description="Identificação Proprietário" languagecode="1046" />
                           </labels>
                           <rows>
                             <row>
@@ -8473,19 +9049,11 @@
                               </cell>
                             </row>
                             <row>
-                              <cell id="{a2f24f9b-9585-4129-b6b7-72dce4e59a19}">
+                              <cell id="{a2f24f9b-9585-4129-b6b7-72dce4e59a19}" visible="false">
                                 <labels>
                                   <label description="Proprietário" languagecode="1046" />
                                 </labels>
                                 <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
-                              </cell>
-                            </row>
-                            <row>
-                              <cell id="{6080c852-7bb9-4b6b-8167-039bbb96a95a}">
-                                <labels>
-                                  <label description="Telefone" languagecode="1046" />
-                                </labels>
-                                <control id="imb_telefone" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_telefone" />
                               </cell>
                             </row>
                             <row>
@@ -8505,62 +9073,6 @@
                               </cell>
                             </row>
                             <row>
-                              <cell id="{e6409a70-558f-472e-8db0-c29e774122d8}">
-                                <labels>
-                                  <label description="E-mail" languagecode="1046" />
-                                </labels>
-                                <control id="imb_email" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_email" />
-                              </cell>
-                            </row>
-                            <row>
-                              <cell id="{02d15167-d3c7-4c9f-b116-197b92809ce5}">
-                                <labels>
-                                  <label description="Rua" languagecode="1046" />
-                                </labels>
-                                <control id="imb_rua" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_rua" />
-                              </cell>
-                            </row>
-                            <row>
-                              <cell id="{6a634981-a699-4586-9be4-168a5deb2d52}">
-                                <labels>
-                                  <label description="Número" languagecode="1046" />
-                                </labels>
-                                <control id="imb_numero" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="imb_numero" />
-                              </cell>
-                            </row>
-                            <row>
-                              <cell id="{53c6ebbf-e959-45e4-a682-709c8de5b86a}">
-                                <labels>
-                                  <label description="Bairro" languagecode="1046" />
-                                </labels>
-                                <control id="imb_bairro" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_bairro" />
-                              </cell>
-                            </row>
-                            <row>
-                              <cell id="{3d7a5b81-6071-42ed-875e-a381a822e944}">
-                                <labels>
-                                  <label description="Cidade" languagecode="1046" />
-                                </labels>
-                                <control id="imb_cidade" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_cidade" />
-                              </cell>
-                            </row>
-                            <row>
-                              <cell id="{6f8e9fbe-f71d-47d1-bc47-f34cca3577b5}">
-                                <labels>
-                                  <label description="CEP" languagecode="1046" />
-                                </labels>
-                                <control id="imb_cep" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_cep" />
-                              </cell>
-                            </row>
-                            <row>
-                              <cell id="{c3f4fcea-1ad4-4e5b-b9ce-53a6b2e0f187}">
-                                <labels>
-                                  <label description="Complemento" languagecode="1046" />
-                                </labels>
-                                <control id="imb_complemento" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_complemento" />
-                              </cell>
-                            </row>
-                            <row>
                               <cell id="{51469237-7625-46d9-ab28-6b2634b143c9}">
                                 <labels>
                                   <label description="Data Última Venda/Aluguel" languagecode="1046" />
@@ -8570,11 +9082,143 @@
                             </row>
                           </rows>
                         </section>
+                        <section name="null_section_3" id="88d72d3e-0733-4f23-9e1e-8567be24bf31" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                          <labels>
+                            <label description="Contato" languagecode="1046" />
+                          </labels>
+                          <rows>
+                            <row />
+                            <row>
+                              <cell id="{6080c852-7bb9-4b6b-8167-039bbb96a95a}" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Telefone" languagecode="1046" />
+                                </labels>
+                                <control id="imb_telefone" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_telefone" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{e6409a70-558f-472e-8db0-c29e774122d8}" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="E-mail" languagecode="1046" />
+                                </labels>
+                                <control id="imb_email" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_email" />
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                    <column width="50%">
+                      <sections>
+                        <section name="_section_268" id="b473b2f7-ad67-438a-9e32-d86ff973c72a" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                          <labels>
+                            <label description="Endereço" languagecode="1046" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell id="{6f8e9fbe-f71d-47d1-bc47-f34cca3577b5}" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="CEP" languagecode="1046" />
+                                </labels>
+                                <control id="imb_cep" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_cep" />
+                              </cell>
+                              <cell id="{67b329f8-9506-468b-893c-8b5d9fd2eb72}" locklevel="0" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Estado" languagecode="1046" />
+                                </labels>
+                                <control id="imb_estado" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="imb_estado" disabled="false" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{3d7a5b81-6071-42ed-875e-a381a822e944}" colspan="2" rowspan="1">
+                                <labels>
+                                  <label description="Cidade" languagecode="1046" />
+                                </labels>
+                                <control id="imb_cidade" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_cidade" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{02d15167-d3c7-4c9f-b116-197b92809ce5}" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Rua" languagecode="1046" />
+                                </labels>
+                                <control id="imb_rua" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_rua" />
+                              </cell>
+                              <cell id="{6a634981-a699-4586-9be4-168a5deb2d52}" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Número" languagecode="1046" />
+                                </labels>
+                                <control id="imb_numero" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="imb_numero" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{53c6ebbf-e959-45e4-a682-709c8de5b86a}" colspan="2" rowspan="1">
+                                <labels>
+                                  <label description="Bairro" languagecode="1046" />
+                                </labels>
+                                <control id="imb_bairro" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_bairro" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{c3f4fcea-1ad4-4e5b-b9ce-53a6b2e0f187}" colspan="2" rowspan="1">
+                                <labels>
+                                  <label description="Complemento" languagecode="1046" />
+                                </labels>
+                                <control id="imb_complemento" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_complemento" />
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
                       </sections>
                     </column>
                   </columns>
                 </tab>
               </tabs>
+              <header id="{d3fe1111-7c28-4d3f-860f-eb98d0ba102d}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+                <rows>
+                  <row>
+                    <cell id="{e4a967a3-f5a9-4075-920d-7150a327554b}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                    <cell id="{f2213f58-da44-41ba-9feb-2b94d8da72c0}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                    <cell id="{9dce3c97-332f-4e52-a017-53da6cf9d941}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                  </row>
+                </rows>
+              </header>
+              <footer id="{0f6edb2e-86c0-4cf1-b3c8-5c8b01b975a2}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+                <rows>
+                  <row>
+                    <cell id="{b1992020-a83f-4e5d-8a1c-38a020cdd38a}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                    <cell id="{e29d8f67-f5dd-47e2-b38f-e836903dd9fe}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                    <cell id="{ae20a795-6636-43bd-8595-cb4cd9d05335}" showlabel="false">
+                      <labels>
+                        <label description="" languagecode="1046" />
+                      </labels>
+                    </cell>
+                  </row>
+                </rows>
+              </footer>
+              <DisplayConditions Order="0" FallbackForm="true">
+                <Everyone />
+              </DisplayConditions>
             </form>
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
@@ -8600,7 +9244,15 @@
               <grid name="imb_proprietariodoimovels" jump="imb_nome" select="1" icon="1" preview="1">
                 <row name="imb_proprietariodoimovel" id="imb_proprietariodoimovelid">
                   <cell name="imb_nome" width="300" />
-                  <cell name="createdon" width="125" />
+                  <cell name="imb_telefone" width="100" />
+                  <cell name="imb_email" width="100" />
+                  <cell name="imb_cep" width="100" />
+                  <cell name="imb_cidade" width="100" />
+                  <cell name="imb_bairro" width="100" />
+                  <cell name="imb_rua" width="100" />
+                  <cell name="imb_numero" width="100" />
+                  <cell name="imb_estado" width="100" />
+                  <cell name="imb_dataultimavendaaluguel" width="197" />
                 </row>
               </grid>
             </layoutxml>
@@ -8610,11 +9262,19 @@
                 <entity name="imb_proprietariodoimovel">
                   <attribute name="imb_proprietariodoimovelid" />
                   <attribute name="imb_nome" />
-                  <attribute name="createdon" />
                   <order attribute="imb_nome" descending="false" />
                   <filter type="and">
                     <condition attribute="statecode" operator="eq" value="0" />
                   </filter>
+                  <attribute name="imb_telefone" />
+                  <attribute name="imb_email" />
+                  <attribute name="imb_cep" />
+                  <attribute name="imb_cidade" />
+                  <attribute name="imb_bairro" />
+                  <attribute name="imb_rua" />
+                  <attribute name="imb_numero" />
+                  <attribute name="imb_dataultimavendaaluguel" />
+                  <attribute name="imb_estado" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -8761,17 +9421,15 @@
             <layoutxml>
               <grid name="resultset" jump="imb_nome" select="1" icon="1" preview="1">
                 <row name="result" id="imb_proprietariodoimovelid">
-                  <cell name="imb_nome" width="300" />
+                  <cell name="imb_nome" width="134" />
                   <cell name="imb_telefone" width="150" />
-                  <cell name="imb_rg" width="150" />
-                  <cell name="imb_cpf" width="150" />
                   <cell name="imb_email" width="150" />
+                  <cell name="imb_cep" width="150" />
+                  <cell name="imb_cidade" width="150" />
+                  <cell name="imb_bairro" width="150" />
                   <cell name="imb_rua" width="150" />
                   <cell name="imb_numero" width="150" />
-                  <cell name="imb_bairro" width="150" />
-                  <cell name="imb_cidade" width="150" />
-                  <cell name="imb_cep" width="150" />
-                  <cell name="imb_complemento" width="150" />
+                  <cell name="imb_estado" width="100" />
                   <cell name="imb_dataultimavendaaluguel" width="150" />
                 </row>
               </grid>
@@ -8788,16 +9446,14 @@
                     <condition attribute="statecode" operator="eq" value="0" />
                   </filter>
                   <attribute name="imb_telefone" />
-                  <attribute name="imb_rg" />
-                  <attribute name="imb_cpf" />
                   <attribute name="imb_email" />
                   <attribute name="imb_rua" />
                   <attribute name="imb_numero" />
                   <attribute name="imb_bairro" />
                   <attribute name="imb_cidade" />
                   <attribute name="imb_cep" />
-                  <attribute name="imb_complemento" />
                   <attribute name="imb_dataultimavendaaluguel" />
+                  <attribute name="imb_estado" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -8817,7 +9473,15 @@
               <grid name="resultset" jump="imb_nome" select="1" icon="1" preview="1">
                 <row name="result" id="imb_proprietariodoimovelid">
                   <cell name="imb_nome" width="300" />
-                  <cell name="createdon" width="125" />
+                  <cell name="imb_telefone" width="100" />
+                  <cell name="imb_email" width="100" />
+                  <cell name="imb_cep" width="100" />
+                  <cell name="imb_cidade" width="100" />
+                  <cell name="imb_bairro" width="100" />
+                  <cell name="imb_rua" width="100" />
+                  <cell name="imb_numero" width="100" />
+                  <cell name="imb_estado" width="100" />
+                  <cell name="imb_dataultimavendaaluguel" width="197" />
                 </row>
               </grid>
             </layoutxml>
@@ -8827,11 +9491,19 @@
                 <entity name="imb_proprietariodoimovel">
                   <attribute name="imb_proprietariodoimovelid" />
                   <attribute name="imb_nome" />
-                  <attribute name="createdon" />
                   <order attribute="imb_nome" descending="false" />
                   <filter type="and">
                     <condition attribute="statecode" operator="eq" value="1" />
                   </filter>
+                  <attribute name="imb_telefone" />
+                  <attribute name="imb_email" />
+                  <attribute name="imb_cep" />
+                  <attribute name="imb_cidade" />
+                  <attribute name="imb_bairro" />
+                  <attribute name="imb_rua" />
+                  <attribute name="imb_numero" />
+                  <attribute name="imb_estado" />
+                  <attribute name="imb_dataultimavendaaluguel" />
                 </entity>
               </fetch>
             </fetchxml>
