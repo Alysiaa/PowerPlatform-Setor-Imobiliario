@@ -1,4 +1,4 @@
-<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25073.164" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25074.00180">
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25074.190" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25074.00190">
   <Entities>
     <Entity>
       <Name LocalizedName="Cliente" OriginalName="Cliente">imb_Cliente</Name>
@@ -1554,6 +1554,16 @@
               <DisplayConditions Order="0" FallbackForm="true">
                 <Everyone />
               </DisplayConditions>
+              <formLibraries>
+                <Library name="imb_validarCPF" libraryUniqueId="{1222b4c7-b9de-4e91-b1c9-518a52832900}" />
+              </formLibraries>
+              <events>
+                <event name="onchange" application="false" active="false" attribute="imb_cpf">
+                  <Handlers>
+                    <Handler functionName="ValidarCPF" libraryName="imb_validarCPF" handlerUniqueId="{960933f7-cf96-49b5-a19d-c3722eefbf5a}" enabled="true" parameters="" passExecutionContext="true" />
+                  </Handlers>
+                </event>
+              </events>
             </form>
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
@@ -10629,6 +10639,20 @@
       <IsHidden>0</IsHidden>
       <FileName>/WebResources/imb_clienteA703B512-AF73-F011-B4CB-00224838419A</FileName>
     </WebResource>
+    <WebResource>
+      <WebResourceId>{24d8816d-a977-f011-b4cb-6045bd38270e}</WebResourceId>
+      <Name>imb_validarCPF</Name>
+      <DisplayName>validarCPF</DisplayName>
+      <LanguageCode>0</LanguageCode>
+      <WebResourceType>3</WebResourceType>
+      <IntroducedVersion>1.0.0.4</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/imb_validarCPF24D8816D-A977-F011-B4CB-6045BD38270E</FileName>
+    </WebResource>
   </WebResources>
   <CustomControls />
   <AppModuleSiteMaps>
@@ -10710,6 +10734,16 @@
     </AppModule>
   </AppModules>
   <EntityDataProviders />
+  <connectionreferences>
+    <connectionreference connectionreferencelogicalname="imb_sharedcommondataserviceforapps_19003">
+      <connectionreferencedisplayname>Microsoft Dataverse Proj1SetorImobiliario-19003</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+  </connectionreferences>
   <Languages>
     <Language>1046</Language>
   </Languages>
