@@ -49,6 +49,7 @@ function ValidarCPF(executionContext)
     }
 
     if (isValid) {
+        // Formatação: 000.000.000-00
         cpf = cpf.substring(0, 3) + '.' + cpf.substring(3, 6) + '.' + cpf.substring(6, 9) + '-' + cpf.substring(9);
         cpf = formContext.getAttribute(label).setValue(cpf);
     } else {

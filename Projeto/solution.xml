@@ -5,7 +5,7 @@
       <LocalizedName description="Proj1 - Setor Imobiliário" languagecode="1046" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.0.5</Version>
+    <Version>1.0.0.6</Version>
     <Managed>0</Managed>
     <Publisher>
       <UniqueName>SetorImobiliario</UniqueName>
@@ -85,11 +85,14 @@
       <RootComponent type="9" schemaName="imb_estado" behavior="0" />
       <RootComponent type="61" schemaName="imb_cliente" behavior="0" />
       <RootComponent type="61" schemaName="imb_corretor" behavior="0" />
+      <RootComponent type="61" schemaName="imb_formatarTelefone" behavior="0" />
       <RootComponent type="61" schemaName="imb_home" behavior="0" />
       <RootComponent type="61" schemaName="imb_imoveis" behavior="0" />
       <RootComponent type="61" schemaName="imb_negociacao" behavior="0" />
       <RootComponent type="61" schemaName="imb_proprietario" behavior="0" />
+      <RootComponent type="61" schemaName="imb_validarCNPJ" behavior="0" />
       <RootComponent type="61" schemaName="imb_validarCPF" behavior="0" />
+      <RootComponent type="61" schemaName="imb_validarRG" behavior="0" />
       <RootComponent type="62" schemaName="imb_Imobiliaria" behavior="0" />
       <RootComponent type="80" schemaName="imb_Imobiliaria" behavior="0" />
     </RootComponents>
@@ -98,7 +101,7 @@
         <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)">
           <package appName="AppModule Web Resources Package" version="2.5">AppModuleWebResources (2.5)</package>
         </Required>
-        <Dependent type="80" schemaName="imb_Imobiliaria" displayName="Imobiliária" />
+        <Dependent type="80" schemaName="imb_Imobiliaria" displayName="Aplicação para Imobiliária" />
       </MissingDependency>
       <MissingDependency>
         <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.15)" id.uniquename="AppChannel">

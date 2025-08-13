@@ -1556,11 +1556,17 @@
               </DisplayConditions>
               <formLibraries>
                 <Library name="imb_validarCPF" libraryUniqueId="{1222b4c7-b9de-4e91-b1c9-518a52832900}" />
+                <Library name="imb_formatarTelefone" libraryUniqueId="{9ff72217-88c6-40e2-8eb3-8a099a36f720}" />
               </formLibraries>
               <events>
                 <event name="onchange" application="false" active="false" attribute="imb_cpf">
                   <Handlers>
                     <Handler functionName="ValidarCPF" libraryName="imb_validarCPF" handlerUniqueId="{960933f7-cf96-49b5-a19d-c3722eefbf5a}" enabled="true" parameters="" passExecutionContext="true" />
+                  </Handlers>
+                </event>
+                <event name="onchange" application="false" active="false" attribute="imb_telefone">
+                  <Handlers>
+                    <Handler functionName="aplicarMascaraTelefone" libraryName="imb_formatarTelefone" handlerUniqueId="{700a3c72-1074-49a5-9991-8e5d9677e86a}" enabled="true" parameters="" passExecutionContext="true" />
                   </Handlers>
                 </event>
               </events>
@@ -2130,7 +2136,7 @@
               <Type>nvarchar</Type>
               <Name>imb_cpf</Name>
               <LogicalName>imb_cpf</LogicalName>
-              <RequiredLevel>none</RequiredLevel>
+              <RequiredLevel>required</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
@@ -3460,6 +3466,28 @@
               <DisplayConditions Order="0" FallbackForm="true">
                 <Everyone />
               </DisplayConditions>
+              <formLibraries>
+                <Library name="imb_validarCPF" libraryUniqueId="{19ccd53c-595c-434a-97cc-3d2c4494f9f0}" />
+                <Library name="imb_validarCNPJ" libraryUniqueId="{af2f59b1-312f-4be6-957a-eeaf9b52932e}" />
+                <Library name="imb_formatarTelefone" libraryUniqueId="{0894d89a-bac1-498f-aa6d-29089d3ca998}" />
+              </formLibraries>
+              <events>
+                <event name="onchange" application="false" active="false" attribute="imb_cpf">
+                  <Handlers>
+                    <Handler functionName="ValidarCPF" libraryName="imb_validarCPF" handlerUniqueId="{7925bac4-3fb4-41bf-93cb-43e80dc341fc}" enabled="true" parameters="" passExecutionContext="true" />
+                  </Handlers>
+                </event>
+                <event name="onchange" application="false" active="false" attribute="imb_cnpj">
+                  <Handlers>
+                    <Handler functionName="ValidarCNPJ" libraryName="imb_validarCNPJ" handlerUniqueId="{7b071973-725a-49d1-ae1d-a8800716a8f3}" enabled="true" parameters="" passExecutionContext="true" />
+                  </Handlers>
+                </event>
+                <event name="onchange" application="false" active="false" attribute="imb_telefone">
+                  <Handlers>
+                    <Handler functionName="aplicarMascaraTelefone" libraryName="imb_formatarTelefone" handlerUniqueId="{dd0865a9-586b-415f-ab1e-7b993726096a}" enabled="true" parameters="" passExecutionContext="true" />
+                  </Handlers>
+                </event>
+              </events>
             </form>
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
@@ -9229,6 +9257,28 @@
               <DisplayConditions Order="0" FallbackForm="true">
                 <Everyone />
               </DisplayConditions>
+              <formLibraries>
+                <Library name="imb_validarCPF" libraryUniqueId="{d64929a4-4c4e-4196-9c32-78a809b77ffd}" />
+                <Library name="imb_validarRG" libraryUniqueId="{24278daf-3d9c-4c90-b6c5-819f8f05d3ba}" />
+                <Library name="imb_formatarTelefone" libraryUniqueId="{7081038c-b26e-45fc-8079-9f49f53f993d}" />
+              </formLibraries>
+              <events>
+                <event name="onchange" application="false" active="false" attribute="imb_cpf">
+                  <Handlers>
+                    <Handler functionName="ValidarCPF" libraryName="imb_validarCPF" handlerUniqueId="{94efd318-eb7b-4b5c-9a35-5b65c97708aa}" enabled="true" parameters="" passExecutionContext="true" />
+                  </Handlers>
+                </event>
+                <event name="onchange" application="false" active="false" attribute="imb_telefone">
+                  <Handlers>
+                    <Handler functionName="aplicarMascaraTelefone" libraryName="imb_formatarTelefone" handlerUniqueId="{5df4a4c6-946e-480c-abd1-2ca1393036e4}" enabled="true" parameters="" passExecutionContext="true" />
+                  </Handlers>
+                </event>
+                <event name="onchange" application="false" active="false" attribute="imb_rg">
+                  <Handlers>
+                    <Handler functionName="validarRG" libraryName="imb_validarRG" handlerUniqueId="{89d1ed13-a06b-4fa9-b3f0-a0a5a041273a}" enabled="true" parameters="" passExecutionContext="true" />
+                  </Handlers>
+                </event>
+              </events>
             </form>
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
@@ -10640,6 +10690,20 @@
       <FileName>/WebResources/imb_clienteA703B512-AF73-F011-B4CB-00224838419A</FileName>
     </WebResource>
     <WebResource>
+      <WebResourceId>{5afb28d0-9678-f011-b4cb-002248386b52}</WebResourceId>
+      <Name>imb_formatarTelefone</Name>
+      <DisplayName>FormatarTelefone</DisplayName>
+      <LanguageCode>0</LanguageCode>
+      <WebResourceType>3</WebResourceType>
+      <IntroducedVersion>1.0.0.5</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/imb_formatarTelefone5AFB28D0-9678-F011-B4CB-002248386B52</FileName>
+    </WebResource>
+    <WebResource>
       <WebResourceId>{24d8816d-a977-f011-b4cb-6045bd38270e}</WebResourceId>
       <Name>imb_validarCPF</Name>
       <DisplayName>validarCPF</DisplayName>
@@ -10652,6 +10716,34 @@
       <CanBeDeleted>1</CanBeDeleted>
       <IsHidden>0</IsHidden>
       <FileName>/WebResources/imb_validarCPF24D8816D-A977-F011-B4CB-6045BD38270E</FileName>
+    </WebResource>
+    <WebResource>
+      <WebResourceId>{dff77984-c077-f011-b4cb-6045bd38270e}</WebResourceId>
+      <Name>imb_validarRG</Name>
+      <DisplayName>validarRG</DisplayName>
+      <LanguageCode>0</LanguageCode>
+      <WebResourceType>3</WebResourceType>
+      <IntroducedVersion>1.0.0.5</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/imb_validarRGDFF77984-C077-F011-B4CB-6045BD38270E</FileName>
+    </WebResource>
+    <WebResource>
+      <WebResourceId>{7219c992-c477-f011-b4cb-6045bd38270e}</WebResourceId>
+      <Name>imb_validarCNPJ</Name>
+      <DisplayName>validarCNPJ</DisplayName>
+      <LanguageCode>0</LanguageCode>
+      <WebResourceType>3</WebResourceType>
+      <IntroducedVersion>1.0.0.5</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/imb_validarCNPJ7219C992-C477-F011-B4CB-6045BD38270E</FileName>
     </WebResource>
   </WebResources>
   <CustomControls />
@@ -10723,7 +10815,7 @@
         <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
       </AppModuleRoleMaps>
       <LocalizedNames>
-        <LocalizedName description="Imobiliária" languagecode="1046" />
+        <LocalizedName description="Aplicação para Imobiliária" languagecode="1046" />
       </LocalizedNames>
       <appsettings>
         <appsetting settingdefinitionid.uniquename="AppChannel">

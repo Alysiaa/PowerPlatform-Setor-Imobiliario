@@ -1,0 +1,39 @@
+function validarRG(executionContext) {
+    if (!executionContext) return;
+
+    var formContext = executionContext.getFormContext();
+    var field = executionContext.getEventSource(); 
+    var rg = field.getValue();
+
+    if (!rg) return;
+
+    // Remove tudo que não for número ou letra
+    var rgLimpo = rg.replace(/[^0-9a-zA-Z]/g, "");
+
+    // Validação de tamanho mínimo e máximo
+    if (rgLimpo.length < 7 || rgLimpo.length > 10) {
+        Xrm.Navigation.openAlertDialog({
+            confirmButtonLabel: "OK",
+            text: "❌ RG inválido!\n\nPor favor, verifique o número digitado!"
+        }, { height: 250, width: 300 }).then(function () {
+            field.setValue("");
+        });
+        return;
+    }
+
+    // Evita números repetidos como "11111111"
+    if (/^(\d)\1+$/.test(rgLimpo)) {
+        Xrm.Navigation.openAlertDialog({
+            confirmButtonLabel: "OK",
+            text: "❌ RG inválido!\n\nNúmero repetido detectado!"
+        }, { height: 250, width: 300 }).then(function () {
+            field.setValue("");
+        });
+        return;
+    }
+
+    // Formata no padrão XX.XXX.XXX-X (considerando só números)
+    var rgFormatado = rgLimpo.replace(/^(\d{1,2})(\d{3})(\d{3})(\d{1})$/, "$1.$2.$3-$4");
+
+    field.setValue(rgFormatado);
+}
