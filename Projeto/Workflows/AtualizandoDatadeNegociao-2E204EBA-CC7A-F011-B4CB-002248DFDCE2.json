@@ -1,0 +1,109 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "imb_sharedcommondataserviceforapps_19003"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Quando_uma_linha_é_adicionada,_modificada_ou_excluída": {
+          "metadata": {
+            "operationMetadataId": "a98c69f8-2a38-48d7-a595-a72c10091d93"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "imb_negociacao",
+              "subscriptionRequest/scope": 4
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Data_Última_Negociação": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "625798dc-6f13-4223-9b50-91e16eecd0da"
+          },
+          "type": "Compose",
+          "inputs": "@formatDateTime(triggerOutputs()?['body/createdon'], 'yyyy-MM-dd')"
+        },
+        "Obter_uma_linha_por_ID": {
+          "runAfter": {
+            "Data_Última_Negociação": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "201d84aa-fcef-4de8-9d23-3343ac8ea557"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "imb_proprietariodoimovels",
+              "recordId": "@triggerOutputs()?['body/_imb_proprietariodoimovel_value']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Atualizar_uma_linha": {
+          "runAfter": {
+            "Obter_uma_linha_por_ID": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3a392e2e-8503-414d-b2be-c426db4a303f"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "UpdateOnlyRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "imb_proprietariodoimovels",
+              "recordId": "@outputs('Obter_uma_linha_por_ID')?['body/imb_proprietariodoimovelid']",
+              "item/imb_dataultimavendaaluguel": "@outputs('Data_Última_Negociação')"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

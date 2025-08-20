@@ -1,4 +1,4 @@
-<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25074.190" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25074.00190">
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25081.188" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25081.00196">
   <Entities>
     <Entity>
       <Name LocalizedName="Cliente" OriginalName="Cliente">imb_Cliente</Name>
@@ -7947,7 +7947,7 @@
               <IsLocalizable>0</IsLocalizable>
               <Format>date</Format>
               <CanChangeDateTimeBehavior>1</CanChangeDateTimeBehavior>
-              <Behavior>1</Behavior>
+              <Behavior>3</Behavior>
               <displaynames>
                 <displayname description="Data Última Venda/Aluguel" languagecode="1046" />
               </displaynames>
@@ -9211,6 +9211,49 @@
                     </column>
                   </columns>
                 </tab>
+                <tab name="tab_2" id="efc367fa-0732-4a3c-9835-e19a934f531d" IsUserDefined="0" locklevel="0" showlabel="true">
+                  <labels>
+                    <label description="Imóveis" languagecode="1046" />
+                  </labels>
+                  <columns>
+                    <column width="100%">
+                      <sections>
+                        <section name="null_section_5" id="5d0fe6a3-58c2-44ac-9c38-e401c1594ede" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                          <labels>
+                            <label description="Informações dos Imóveis" languagecode="1046" />
+                          </labels>
+                          <rows>
+                            <row />
+                            <row>
+                              <cell locklevel="0" id="{1f031dbe-19ed-4450-886b-55c2dc14022a}" rowspan="4" colspan="1" auto="true" showlabel="true">
+                                <labels>
+                                  <label description="Imóveis" languagecode="1046" />
+                                </labels>
+                                <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                                  <parameters>
+                                    <RecordsPerPage>4</RecordsPerPage>
+                                    <AutoExpand>Auto</AutoExpand>
+                                    <EnableQuickFind>false</EnableQuickFind>
+                                    <EnableViewPicker>false</EnableViewPicker>
+                                    <EnableChartPicker>true</EnableChartPicker>
+                                    <ChartGridMode>All</ChartGridMode>
+                                    <RelationshipName>imb_imovel_proprietarioDoImovel_imb_proprietariodoimovel</RelationshipName>
+                                    <TargetEntityType>imb_imovel</TargetEntityType>
+                                    <ViewId>{edfe1175-8914-497d-8cba-48cc48563c58}</ViewId>
+                                    <ViewIds>{edfe1175-8914-497d-8cba-48cc48563c58}</ViewIds>
+                                  </parameters>
+                                </control>
+                              </cell>
+                            </row>
+                            <row />
+                            <row />
+                            <row />
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                  </columns>
+                </tab>
               </tabs>
               <header id="{d3fe1111-7c28-4d3f-860f-eb98d0ba102d}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
                 <rows>
@@ -9590,7 +9633,124 @@
     </Entity>
   </Entities>
   <Roles></Roles>
-  <Workflows></Workflows>
+  <Workflows>
+    <Workflow WorkflowId="{fa5569aa-1c7e-f011-b4cb-00224836f224}" Name="Exibição de Valor Total" Description="Clique para adicionar a descrição">
+      <XamlFileName>/Workflows/ExibiodeValorTotal-FA5569AA-1C7E-F011-B4CB-00224836F224.xaml</XamlFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>2</Category>
+      <Mode>1</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.6</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ProcessTriggerScope>2</ProcessTriggerScope>
+      <ModernFlowType>0</ModernFlowType>
+      <PrimaryEntity>imb_Negociacao</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1046" description="Exibição de Valor Total" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description languagecode="1046" description="Clique para adicionar a descrição" />
+      </Descriptions>
+    </Workflow>
+    <Workflow WorkflowId="{868c3ae7-1c7e-f011-b4cb-00224836f224}" Name="Exibição ID" Description="Clique para adicionar a descrição">
+      <XamlFileName>/Workflows/ExibioID-868C3AE7-1C7E-F011-B4CB-00224836F224.xaml</XamlFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>2</Category>
+      <Mode>1</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.6</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ProcessTriggerScope>2</ProcessTriggerScope>
+      <ModernFlowType>0</ModernFlowType>
+      <PrimaryEntity>imb_Negociacao</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1046" description="Exibição ID" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description languagecode="1046" description="Clique para adicionar a descrição" />
+      </Descriptions>
+    </Workflow>
+    <Workflow WorkflowId="{2e204eba-cc7a-f011-b4cb-002248dfdce2}" Name="Atualizando Data de Negociação">
+      <JsonFileName>/Workflows/AtualizandoDatadeNegociao-2E204EBA-CC7A-F011-B4CB-002248DFDCE2.json</JsonFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>5</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.6</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ModernFlowType>0</ModernFlowType>
+      <PrimaryEntity>none</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1046" description="Atualizando Data de Negociação" />
+      </LocalizedNames>
+    </Workflow>
+    <Workflow WorkflowId="{24710217-d07a-f011-b4cb-002248dfdce2}" Name="Validação Tipo de Negociação" Description="Clique para adicionar a descrição">
+      <XamlFileName>/Workflows/ValidaoTipodeNegociao-24710217-D07A-F011-B4CB-002248DFDCE2.xaml</XamlFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>2</Category>
+      <Mode>1</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.6</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ProcessTriggerScope>2</ProcessTriggerScope>
+      <ModernFlowType>0</ModernFlowType>
+      <PrimaryEntity>imb_Negociacao</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1046" description="Validação Tipo de Negociação" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description languagecode="1046" description="Clique para adicionar a descrição" />
+      </Descriptions>
+    </Workflow>
+  </Workflows>
   <FieldSecurityProfiles></FieldSecurityProfiles>
   <Templates />
   <EntityMaps />
