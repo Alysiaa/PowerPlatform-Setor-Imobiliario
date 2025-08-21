@@ -3391,11 +3391,11 @@
                           <rows>
                             <row />
                             <row>
-                              <cell id="{bed481e3-fed9-4cd7-a5d3-086720b48bc3}" colspan="1" rowspan="1">
+                              <cell id="{bed481e3-fed9-4cd7-a5d3-086720b48bc3}" colspan="1" rowspan="1" locklevel="0">
                                 <labels>
                                   <label description="Meta Batida" languagecode="1046" />
                                 </labels>
-                                <control id="imb_metabatida" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="imb_metabatida" />
+                                <control id="imb_metabatida" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="imb_metabatida" disabled="true" />
                               </cell>
                             </row>
                             <row>
@@ -9689,6 +9689,36 @@
       <PrimaryEntity>imb_Negociacao</PrimaryEntity>
       <LocalizedNames>
         <LocalizedName languagecode="1046" description="Exibição ID" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description languagecode="1046" description="Clique para adicionar a descrição" />
+      </Descriptions>
+    </Workflow>
+    <Workflow WorkflowId="{c8611b2f-217e-f011-b4cb-00224836f224}" Name="Verificação da Meta" Description="Clique para adicionar a descrição">
+      <XamlFileName>/Workflows/VerificaodaMeta-C8611B2F-217E-F011-B4CB-00224836F224.xaml</XamlFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>2</Category>
+      <Mode>1</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.7</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ProcessTriggerScope>2</ProcessTriggerScope>
+      <ModernFlowType>0</ModernFlowType>
+      <PrimaryEntity>imb_Corretor</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1046" description="Verificação da Meta" />
       </LocalizedNames>
       <Descriptions>
         <Description languagecode="1046" description="Clique para adicionar a descrição" />

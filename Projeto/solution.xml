@@ -5,7 +5,7 @@
       <LocalizedName description="Proj1 - Setor Imobiliário" languagecode="1046" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.0.7</Version>
+    <Version>1.0.0.8</Version>
     <Managed>0</Managed>
     <Publisher>
       <UniqueName>SetorImobiliario</UniqueName>
@@ -86,6 +86,7 @@
       <RootComponent type="29" id="{24710217-d07a-f011-b4cb-002248dfdce2}" behavior="0" />
       <RootComponent type="29" id="{2e204eba-cc7a-f011-b4cb-002248dfdce2}" behavior="0" />
       <RootComponent type="29" id="{868c3ae7-1c7e-f011-b4cb-00224836f224}" behavior="0" />
+      <RootComponent type="29" id="{c8611b2f-217e-f011-b4cb-00224836f224}" behavior="0" />
       <RootComponent type="29" id="{fa5569aa-1c7e-f011-b4cb-00224836f224}" behavior="0" />
       <RootComponent type="61" schemaName="imb_cliente" behavior="0" />
       <RootComponent type="61" schemaName="imb_corretor" behavior="0" />
