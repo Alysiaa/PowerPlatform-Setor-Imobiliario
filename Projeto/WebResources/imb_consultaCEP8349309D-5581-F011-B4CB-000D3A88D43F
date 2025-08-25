@@ -1,0 +1,90 @@
+function preencherEnderecoPorCep(executionContext) {
+    var formContext = executionContext.getFormContext();
+
+    // Recupera valor do campo CEP
+    var cep = formContext.getAttribute("imb_cep").getValue();
+
+    // 🔹 Se o campo foi limpo, limpar também os demais
+    if (!cep) {
+        limparCamposEndereco(formContext);
+        // Remover obrigatoriedade do campo Número
+        formContext.getAttribute("imb_numero").setRequiredLevel("none");
+        return;
+    }
+
+    // Remove caracteres que não são números
+    cep = cep.replace(/\D/g, "");
+
+    if (cep.length === 8) {
+        var url = "https://viacep.com.br/ws/" + cep + "/json/";
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.erro) {
+                    // 🔹 Formatar o CEP no padrão 00000-000
+                    var cepFormatado = cep.substring(0, 5) + "-" + cep.substring(5);
+                    formContext.getAttribute("imb_cep").setValue(cepFormatado);
+
+                    // Preenche campos de texto
+                    formContext.getAttribute("imb_rua").setValue(data.logradouro);
+                    formContext.getAttribute("imb_bairro").setValue(data.bairro);
+                    formContext.getAttribute("imb_cidade").setValue(data.localidade);
+
+                    // 🔹 Mapa de sigla -> nome do estado
+                    var estadosMap = {
+                        "AC": "Acre", "AL": "Alagoas", "AP": "Amapá", "AM": "Amazonas",
+                        "BA": "Bahia", "CE": "Ceará", "DF": "Distrito Federal", "ES": "Espírito Santo",
+                        "GO": "Goiás", "MA": "Maranhão", "MT": "Mato Grosso", "MS": "Mato Grosso do Sul",
+                        "MG": "Minas Gerais", "PA": "Pará", "PB": "Paraíba", "PR": "Paraná",
+                        "PE": "Pernambuco", "PI": "Piauí", "RJ": "Rio de Janeiro", "RN": "Rio Grande do Norte",
+                        "RS": "Rio Grande do Sul", "RO": "Rondônia", "RR": "Roraima", "SC": "Santa Catarina",
+                        "SP": "São Paulo", "SE": "Sergipe", "TO": "Tocantins"
+                    };
+
+                    var estadoSigla = data.uf; // ex: "SP"
+                    var estadoNome = estadosMap[estadoSigla]; // ex: "São Paulo"
+
+                    // Procurar no OptionSet pelo nome
+                    var estadoOptions = formContext.getAttribute("imb_estado").getOptions();
+                    var estadoValue = null;
+
+                    estadoOptions.forEach(function(option) {
+                        if (option.text.toUpperCase() === estadoNome.toUpperCase()) {
+                            estadoValue = option.value;
+                        }
+                    });
+
+                    if (estadoValue !== null) {
+                        formContext.getAttribute("imb_estado").setValue(estadoValue);
+                    } else {
+                        console.log("Estado não encontrado no OptionSet: " + estadoNome);
+                    }
+
+                    // 🔹 Agora sim: se o CEP foi preenchido com sucesso, tornar Número obrigatório
+                    formContext.getAttribute("imb_numero").setRequiredLevel("required");
+
+                } else {
+                    alert("CEP não encontrado.");
+                    limparCamposEndereco(formContext);
+                    formContext.getAttribute("imb_numero").setRequiredLevel("none");
+                }
+            })
+            .catch(error => {
+                console.log("Erro ao consultar ViaCEP: " + error.message);
+                formContext.getAttribute("imb_numero").setRequiredLevel("none");
+            });
+    } else {
+        alert("CEP inválido. Informe 8 dígitos.");
+        limparCamposEndereco(formContext);
+        formContext.getAttribute("imb_numero").setRequiredLevel("none");
+    }
+}
+
+// 🔹 Função auxiliar para limpar os campos quando o CEP é inválido ou apagado
+function limparCamposEndereco(formContext) {
+    formContext.getAttribute("imb_rua").setValue(null);
+    formContext.getAttribute("imb_bairro").setValue(null);
+    formContext.getAttribute("imb_cidade").setValue(null);
+    formContext.getAttribute("imb_estado").setValue(null);
+}

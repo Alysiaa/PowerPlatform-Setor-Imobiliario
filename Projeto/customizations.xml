@@ -494,6 +494,46 @@
                 <Description description="" languagecode="1046" />
               </Descriptions>
             </attribute>
+            <attribute PhysicalName="imb_numero">
+              <Type>int</Type>
+              <Name>imb_numero</Name>
+              <LogicalName>imb_numero</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>disabled</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <Format>none</Format>
+              <MinValue>-2147483648</MinValue>
+              <MaxValue>2147483647</MaxValue>
+              <displaynames>
+                <displayname description="Número" languagecode="1046" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1046" />
+              </Descriptions>
+            </attribute>
             <attribute PhysicalName="imb_Rua">
               <Type>nvarchar</Type>
               <Name>imb_rua</Name>
@@ -1467,7 +1507,7 @@
                                 <labels>
                                   <label description="Estado" languagecode="1046" />
                                 </labels>
-                                <control id="imb_estado" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="imb_estado" disabled="false" />
+                                <control id="imb_estado" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="imb_estado" disabled="true" />
                               </cell>
                             </row>
                             <row>
@@ -1475,15 +1515,21 @@
                                 <labels>
                                   <label description="Cidade" languagecode="1046" />
                                 </labels>
-                                <control id="imb_cidade" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_cidade" disabled="false" />
+                                <control id="imb_cidade" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_cidade" disabled="true" />
                               </cell>
                             </row>
                             <row>
-                              <cell id="{51b7f48f-fc33-48e4-8c48-dbce9f6e5c0d}" locklevel="0" colspan="2" rowspan="1">
+                              <cell id="{51b7f48f-fc33-48e4-8c48-dbce9f6e5c0d}" locklevel="0" colspan="1" rowspan="1">
                                 <labels>
                                   <label description="Rua" languagecode="1046" />
                                 </labels>
-                                <control id="imb_rua" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_rua" disabled="false" />
+                                <control id="imb_rua" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_rua" disabled="true" />
+                              </cell>
+                              <cell id="{794a61d2-4084-4a78-b4da-98553b87470c}" locklevel="0" colspan="1" rowspan="1">
+                                <labels>
+                                  <label description="Número" languagecode="1046" />
+                                </labels>
+                                <control id="imb_numero" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="imb_numero" disabled="false" />
                               </cell>
                             </row>
                             <row>
@@ -1491,7 +1537,7 @@
                                 <labels>
                                   <label description="Bairro" languagecode="1046" />
                                 </labels>
-                                <control id="imb_bairro" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_bairro" disabled="false" />
+                                <control id="imb_bairro" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="imb_bairro" disabled="true" />
                               </cell>
                             </row>
                             <row>
@@ -1557,6 +1603,7 @@
               <formLibraries>
                 <Library name="imb_validarCPF" libraryUniqueId="{1222b4c7-b9de-4e91-b1c9-518a52832900}" />
                 <Library name="imb_formatarTelefone" libraryUniqueId="{9ff72217-88c6-40e2-8eb3-8a099a36f720}" />
+                <Library name="imb_consultaCEP" libraryUniqueId="{b90f6337-0fd7-44a1-a7cb-73f17db1ec48}" />
               </formLibraries>
               <events>
                 <event name="onchange" application="false" active="false" attribute="imb_cpf">
@@ -1567,6 +1614,11 @@
                 <event name="onchange" application="false" active="false" attribute="imb_telefone">
                   <Handlers>
                     <Handler functionName="aplicarMascaraTelefone" libraryName="imb_formatarTelefone" handlerUniqueId="{700a3c72-1074-49a5-9991-8e5d9677e86a}" enabled="true" parameters="" passExecutionContext="true" />
+                  </Handlers>
+                </event>
+                <event name="onchange" application="false" active="false" attribute="imb_cep">
+                  <Handlers>
+                    <Handler functionName="preencherEnderecoPorCep" libraryName="imb_consultaCEP" handlerUniqueId="{f15654e0-5871-4635-9224-a5619a9a874c}" enabled="true" parameters="" passExecutionContext="true" />
                   </Handlers>
                 </event>
               </events>
@@ -4098,7 +4150,7 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>0</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
-              <AppDefaultValue>826060000</AppDefaultValue>
+              <AppDefaultValue>-1</AppDefaultValue>
               <optionset Name="imb_imovel_imb_conservacao">
                 <OptionSetType>picklist</OptionSetType>
                 <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -4297,7 +4349,7 @@
               <Type>lookup</Type>
               <Name>imb_proprietariodoimovel</Name>
               <LogicalName>imb_proprietariodoimovel</LogicalName>
-              <RequiredLevel>none</RequiredLevel>
+              <RequiredLevel>required</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -5241,7 +5293,7 @@
                                 <labels>
                                   <label description="Estado" languagecode="1046" />
                                 </labels>
-                                <control id="imb_estado" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="imb_estado" disabled="false" />
+                                <control id="imb_estado" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="imb_estado" disabled="true" />
                               </cell>
                             </row>
                             <row>
@@ -5249,13 +5301,13 @@
                                 <labels>
                                   <label description="Cidade" languagecode="1046" />
                                 </labels>
-                                <control id="imb_cidade" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_cidade" />
+                                <control id="imb_cidade" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_cidade" disabled="true" />
                               </cell>
                               <cell id="{66ee4986-4bbe-46f4-a478-c5d05566848a}" colspan="1" rowspan="1">
                                 <labels>
                                   <label description="Bairro" languagecode="1046" />
                                 </labels>
-                                <control id="imb_bairro" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_bairro" />
+                                <control id="imb_bairro" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_bairro" disabled="true" />
                               </cell>
                             </row>
                             <row>
@@ -5263,7 +5315,7 @@
                                 <labels>
                                   <label description="Rua" languagecode="1046" />
                                 </labels>
-                                <control id="imb_rua" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_rua" />
+                                <control id="imb_rua" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_rua" disabled="true" />
                               </cell>
                               <cell id="{ae2f1adb-cf51-4e58-9738-2dbf7c5980f8}" colspan="1" rowspan="1">
                                 <labels>
@@ -5332,6 +5384,16 @@
               <DisplayConditions Order="0" FallbackForm="true">
                 <Everyone />
               </DisplayConditions>
+              <formLibraries>
+                <Library name="imb_consultaCEP" libraryUniqueId="{398d50b7-adfb-474f-95e5-eb80cc86bb32}" />
+              </formLibraries>
+              <events>
+                <event name="onchange" application="false" active="false" attribute="imb_cep">
+                  <Handlers>
+                    <Handler functionName="preencherEnderecoPorCep" libraryName="imb_consultaCEP" handlerUniqueId="{1427c409-57c7-425d-897b-136961696ff0}" enabled="true" parameters="" passExecutionContext="true" />
+                  </Handlers>
+                </event>
+              </events>
             </form>
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
@@ -7889,7 +7951,7 @@
               <Type>nvarchar</Type>
               <Name>imb_cpf</Name>
               <LogicalName>imb_cpf</LogicalName>
-              <RequiredLevel>none</RequiredLevel>
+              <RequiredLevel>required</RequiredLevel>
               <DisplayMask>ValidForForm|ValidForGrid</DisplayMask>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
@@ -8168,7 +8230,7 @@
               <Type>nvarchar</Type>
               <Name>imb_rg</Name>
               <LogicalName>imb_rg</LogicalName>
-              <RequiredLevel>none</RequiredLevel>
+              <RequiredLevel>required</RequiredLevel>
               <DisplayMask>ValidForForm|ValidForGrid</DisplayMask>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
@@ -9125,7 +9187,7 @@
                                 <labels>
                                   <label description="Data Última Venda/Aluguel" languagecode="1046" />
                                 </labels>
-                                <control id="imb_dataultimavendaaluguel" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="imb_dataultimavendaaluguel" />
+                                <control id="imb_dataultimavendaaluguel" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="imb_dataultimavendaaluguel" disabled="true" />
                               </cell>
                             </row>
                           </rows>
@@ -9174,23 +9236,23 @@
                                 <labels>
                                   <label description="Estado" languagecode="1046" />
                                 </labels>
-                                <control id="imb_estado" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="imb_estado" disabled="false" />
+                                <control id="imb_estado" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="imb_estado" disabled="true" />
                               </cell>
                             </row>
                             <row>
-                              <cell id="{3d7a5b81-6071-42ed-875e-a381a822e944}" colspan="2" rowspan="1">
+                              <cell id="{3d7a5b81-6071-42ed-875e-a381a822e944}" colspan="2" rowspan="1" locklevel="0">
                                 <labels>
                                   <label description="Cidade" languagecode="1046" />
                                 </labels>
-                                <control id="imb_cidade" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_cidade" />
+                                <control id="imb_cidade" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_cidade" disabled="true" />
                               </cell>
                             </row>
                             <row>
-                              <cell id="{02d15167-d3c7-4c9f-b116-197b92809ce5}" colspan="1" rowspan="1">
+                              <cell id="{02d15167-d3c7-4c9f-b116-197b92809ce5}" colspan="1" rowspan="1" locklevel="0">
                                 <labels>
                                   <label description="Rua" languagecode="1046" />
                                 </labels>
-                                <control id="imb_rua" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_rua" />
+                                <control id="imb_rua" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_rua" disabled="true" />
                               </cell>
                               <cell id="{6a634981-a699-4586-9be4-168a5deb2d52}" colspan="1" rowspan="1">
                                 <labels>
@@ -9200,11 +9262,11 @@
                               </cell>
                             </row>
                             <row>
-                              <cell id="{53c6ebbf-e959-45e4-a682-709c8de5b86a}" colspan="2" rowspan="1">
+                              <cell id="{53c6ebbf-e959-45e4-a682-709c8de5b86a}" colspan="2" rowspan="1" locklevel="0">
                                 <labels>
                                   <label description="Bairro" languagecode="1046" />
                                 </labels>
-                                <control id="imb_bairro" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_bairro" />
+                                <control id="imb_bairro" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="imb_bairro" disabled="true" />
                               </cell>
                             </row>
                             <row>
@@ -9314,6 +9376,7 @@
                 <Library name="imb_validarCPF" libraryUniqueId="{d64929a4-4c4e-4196-9c32-78a809b77ffd}" />
                 <Library name="imb_validarRG" libraryUniqueId="{24278daf-3d9c-4c90-b6c5-819f8f05d3ba}" />
                 <Library name="imb_formatarTelefone" libraryUniqueId="{7081038c-b26e-45fc-8079-9f49f53f993d}" />
+                <Library name="imb_consultaCEP" libraryUniqueId="{1e25caba-b7e2-4eac-8f03-378ebb1ddd0e}" />
               </formLibraries>
               <events>
                 <event name="onchange" application="false" active="false" attribute="imb_cpf">
@@ -9329,6 +9392,11 @@
                 <event name="onchange" application="false" active="false" attribute="imb_rg">
                   <Handlers>
                     <Handler functionName="validarRG" libraryName="imb_validarRG" handlerUniqueId="{89d1ed13-a06b-4fa9-b3f0-a0a5a041273a}" enabled="true" parameters="" passExecutionContext="true" />
+                  </Handlers>
+                </event>
+                <event name="onchange" application="false" active="false" attribute="imb_cep">
+                  <Handlers>
+                    <Handler functionName="preencherEnderecoPorCep" libraryName="imb_consultaCEP" handlerUniqueId="{86ea9c86-8bfd-47ca-8baa-7689c89abf6e}" enabled="true" parameters="" passExecutionContext="true" />
                   </Handlers>
                 </event>
               </events>
@@ -10823,6 +10891,20 @@
       <CanBeDeleted>1</CanBeDeleted>
       <IsHidden>0</IsHidden>
       <FileName>/WebResources/imb_selecionarProp8ADDA262-4B81-F011-B4CB-000D3A88D43F</FileName>
+    </WebResource>
+    <WebResource>
+      <WebResourceId>{8349309d-5581-f011-b4cb-000d3a88d43f}</WebResourceId>
+      <Name>imb_consultaCEP</Name>
+      <DisplayName>Consulta CEP</DisplayName>
+      <LanguageCode>0</LanguageCode>
+      <WebResourceType>3</WebResourceType>
+      <IntroducedVersion>1.0.0.9</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/imb_consultaCEP8349309D-5581-F011-B4CB-000D3A88D43F</FileName>
     </WebResource>
     <WebResource>
       <WebResourceId>{a190fde0-ae73-f011-b4cb-00224838419a}</WebResourceId>
