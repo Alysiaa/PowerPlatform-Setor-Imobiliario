@@ -1,0 +1,35 @@
+function setProprietarioDoImovel(executionContext) {
+    var formContext = executionContext.getFormContext();
+
+    // Recupera o lookup do Imóvel
+    var imovel = formContext.getAttribute("imb_imovel").getValue();
+
+    if (imovel != null) {
+        var imovelId = imovel[0].id.replace("{", "").replace("}", "");
+
+        // Consulta o Imóvel no Dataverse para pegar o Proprietário
+        Xrm.WebApi.retrieveRecord("imb_imovel", imovelId, "?$select=_imb_proprietariodoimovel_value").then(
+            function success(result) {
+                if (result["_imb_proprietariodoimovel_value"]) {
+                    var proprietarioId = result["_imb_proprietariodoimovel_value"];
+                    var proprietarioName = result["_imb_proprietariodoimovel_value@OData.Community.Display.V1.FormattedValue"];
+                    var proprietarioEntity = result["_imb_proprietariodoimovel_value@Microsoft.Dynamics.CRM.lookuplogicalname"];
+
+                    // Preenche o lookup Proprietário do Imóvel
+                    var proprietarioLookup = [{
+                        id: proprietarioId,
+                        name: proprietarioName,
+                        entityType: proprietarioEntity
+                    }];
+                    formContext.getAttribute("imb_proprietariodoimovel").setValue(proprietarioLookup);
+                }
+            },
+            function(error) {
+                console.log("Erro ao recuperar Proprietário: " + error.message);
+            }
+        );
+    } else {
+        // Se limpar o Imóvel, também limpa o Proprietário
+        formContext.getAttribute("imb_proprietariodoimovel").setValue(null);
+    }
+}

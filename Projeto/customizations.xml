@@ -1,4 +1,4 @@
-<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25081.188" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25081.00196">
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25082.141" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25082.00141">
   <Entities>
     <Entity>
       <Name LocalizedName="Cliente" OriginalName="Cliente">imb_Cliente</Name>
@@ -5401,7 +5401,7 @@
               <grid name="imb_imovels" jump="imb_nome" select="1" icon="1" preview="0">
                 <row name="imb_imovel" id="imb_imovelid">
                   <cell name="imb_nome" width="300" />
-                  <cell name="createdon" width="125" />
+                  <cell name="imb_proprietariodoimovel" width="168" />
                 </row>
               </grid>
             </layoutxml>
@@ -5411,10 +5411,10 @@
                 <entity name="imb_imovel">
                   <attribute name="imb_imovelid" />
                   <attribute name="imb_nome" />
-                  <attribute name="createdon" />
                   <filter type="and">
                     <condition attribute="statecode" operator="eq" value="0" />
                   </filter>
+                  <attribute name="imb_proprietariodoimovel" />
                 </entity>
               </fetch>
             </fetchxml>
@@ -5882,7 +5882,7 @@
               <Type>lookup</Type>
               <Name>imb_corretor</Name>
               <LogicalName>imb_corretor</LogicalName>
-              <RequiredLevel>none</RequiredLevel>
+              <RequiredLevel>required</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -5920,7 +5920,7 @@
               <Type>lookup</Type>
               <Name>imb_imovel</Name>
               <LogicalName>imb_imovel</LogicalName>
-              <RequiredLevel>none</RequiredLevel>
+              <RequiredLevel>required</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -6076,7 +6076,7 @@
               <Type>picklist</Type>
               <Name>imb_tipodenegociacao</Name>
               <LogicalName>imb_tipodenegociacao</LogicalName>
-              <RequiredLevel>none</RequiredLevel>
+              <RequiredLevel>required</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
@@ -7240,7 +7240,7 @@
                                 <labels>
                                   <label description="Proprietário do Imóvel" languagecode="1046" />
                                 </labels>
-                                <control id="imb_proprietariodoimovel" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="imb_proprietariodoimovel" disabled="false" />
+                                <control id="imb_proprietariodoimovel" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="imb_proprietariodoimovel" disabled="true" />
                               </cell>
                             </row>
                           </rows>
@@ -7295,6 +7295,16 @@
               <DisplayConditions Order="0" FallbackForm="true">
                 <Everyone />
               </DisplayConditions>
+              <formLibraries>
+                <Library name="imb_selecionarProp" libraryUniqueId="{2d4f5fa2-4d1a-466d-a048-40c28b61ec4e}" />
+              </formLibraries>
+              <events>
+                <event name="onchange" application="false" active="false" attribute="imb_imovel">
+                  <Handlers>
+                    <Handler functionName="setProprietarioDoImovel" libraryName="imb_selecionarProp" handlerUniqueId="{8d5d1e48-4f0e-4db4-8cfb-1b12a33e34d5}" enabled="true" parameters="" passExecutionContext="true" />
+                  </Handlers>
+                </event>
+              </events>
             </form>
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
@@ -10801,6 +10811,19 @@
     </optionset>
   </optionsets>
   <WebResources>
+    <WebResource>
+      <WebResourceId>{8adda262-4b81-f011-b4cb-000d3a88d43f}</WebResourceId>
+      <Name>imb_selecionarProp</Name>
+      <DisplayName>Selecionando Proprietário do Imóvel</DisplayName>
+      <WebResourceType>3</WebResourceType>
+      <IntroducedVersion>1.0.0.8</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/imb_selecionarProp8ADDA262-4B81-F011-B4CB-000D3A88D43F</FileName>
+    </WebResource>
     <WebResource>
       <WebResourceId>{a190fde0-ae73-f011-b4cb-00224838419a}</WebResourceId>
       <Name>imb_negociacao</Name>

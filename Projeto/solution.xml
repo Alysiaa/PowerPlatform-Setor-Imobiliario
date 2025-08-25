@@ -1,11 +1,11 @@
-<ImportExportXml version="9.2.25081.188" SolutionPackageVersion="9.2" languagecode="1046" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25081.188" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25081.00196">
+<ImportExportXml version="9.2.25082.141" SolutionPackageVersion="9.2" languagecode="1046" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25082.141" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25082.00141">
   <SolutionManifest>
     <UniqueName>Proj1SetorImobiliario</UniqueName>
     <LocalizedNames>
       <LocalizedName description="Proj1 - Setor Imobiliário" languagecode="1046" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.0.8</Version>
+    <Version>1.0.0.9</Version>
     <Managed>0</Managed>
     <Publisher>
       <UniqueName>SetorImobiliario</UniqueName>
@@ -95,6 +95,7 @@
       <RootComponent type="61" schemaName="imb_imoveis" behavior="0" />
       <RootComponent type="61" schemaName="imb_negociacao" behavior="0" />
       <RootComponent type="61" schemaName="imb_proprietario" behavior="0" />
+      <RootComponent type="61" schemaName="imb_selecionarProp" behavior="0" />
       <RootComponent type="61" schemaName="imb_validarCNPJ" behavior="0" />
       <RootComponent type="61" schemaName="imb_validarCPF" behavior="0" />
       <RootComponent type="61" schemaName="imb_validarRG" behavior="0" />
